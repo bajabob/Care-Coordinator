@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  pool: 5
+  username: carecoordinator
+  password: cc2016
+
+development:
+  <<: *default
+  database: carecoordinator_development
+
+production:
+  <<: *default
+  database: carecoordinator_production
+  username: carecoordinator
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
