@@ -7,3 +7,12 @@
 * Then run `rake db:seed`. This will populate all of the tables.
 * Start the server with `rails server`.
 * Visit `http://localhost:3000/test/index`. If you see the text `The test works`, then you have properly installed the application.
+
+
+Rake commands:
+db:migrate runs (single) migrations that have not run yet.
+db:create creates the database
+db:drop deletes the database
+db:schema:load creates tables and columns within the (existing) database following schema.rb
+db:setup does db:create, db:schema:load, db:seed
+db:reset does db:drop, db:setup

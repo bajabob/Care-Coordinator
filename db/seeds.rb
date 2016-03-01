@@ -12,23 +12,8 @@ testDb.each do |test|
   Test.create!(test)
 end
 
-# add some test users
-users = User.create(
-    [
-        {
-            name_first:   'JFair',
-            name_last:    'Sanchez',
-            email:        'jFairess@supercool.net',
-            password:     'long hash',
-            sms_phone:    '2123334444',
-        },
-        {
-            name_first:   'Dan',
-            name_last:    'Fairplay',
-            email:        'suhdude@gmail.com',
-            password:     'long hash',
-            sms_phone:    '5556668989',
-        }
-    ]
-)
 
+
+# add some test users
+#User.create_new('J-Fair', 'Sanchez','jFairess@supercool.net','long hash','2123334444',)
+#User.create_new('Dan', 'Fairplay','suhdude@gmail.com','long hash','5556668989',)
