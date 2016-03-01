@@ -8,6 +8,9 @@
 
   %body
     %h1.title Care Coordinator
+    =link_to "Daily", appointments_daily_path, :class => "button"
+    =link_to "Weekly", appointments_weekly_path, :class => "button"
+    =link_to "Monthly", appointments_monthly_path, :class => "button"
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
