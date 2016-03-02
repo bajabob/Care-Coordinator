@@ -62,4 +62,10 @@ git checkout develop
 
 git merge feature/yourFeatureName
 
+git add .
+
+git commit -m “description of changes”
+
+git push origin develop
+
 **Do not push to master! Only Bob will do this to make sure we dont break anything :) **
