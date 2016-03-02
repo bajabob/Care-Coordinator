@@ -9,7 +9,7 @@
 * Visit `http://localhost:3000/test/index`. If you see the text `The test works`, then you have properly installed the application.
 
 
-Rake commands:
+###Rake commands:
 db:migrate runs (single) migrations that have not run yet.
 
 db:create creates the database
@@ -24,7 +24,7 @@ db:reset does db:drop, db:setup
 
 
 
-steps to follow to make changes to code:
+#Steps to follow to make changes to code
 
 make sure repo is cloned
 
