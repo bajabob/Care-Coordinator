@@ -45,3 +45,5 @@ git push origin feature/yourFeatureName
 git checkout develop
 
 git merge feature/yourFeatureName
+
+**Do not push to master! Only Bob will do this to make sure we dont break anything :) **
