@@ -34,7 +34,21 @@ git pull
 
 git branch feature/yourFeatureName
 
-make all your changes, make sure your code works by running ‘rails server’
+git checkout feature/yourFeatureName
+
+bundle install
+
+rake db:migrate
+
+rake db:seed
+
+rails server
+
+go to http://localhost:3000
+
+if you see the Care Coordinator page it worked
+
+make all your changes, make sure your code works by running ‘rails server’ after making a change to a file. you will not push anything until you finish your feature
 
 once finished, push to your feature branch:
 
