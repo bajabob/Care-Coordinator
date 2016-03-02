@@ -32,7 +32,7 @@ git checkout develop
 
 git pull
 
-git branch feature/<your feature name>
+git branch feature/yourFeatureName
 
 make all your changes, make sure your code works by running ‘rails server’
 
@@ -40,8 +40,8 @@ once finished, push to your feature branch:
 
 git commit -m “description of changes”
 
-git push origin feature/<your feature name>
+git push origin feature/yourFeatureName
 
 git checkout develop
 
-git merge feature/<your feature name>
+git merge feature/yourFeatureName
