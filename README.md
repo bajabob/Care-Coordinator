@@ -11,8 +11,37 @@
 
 Rake commands:
 db:migrate runs (single) migrations that have not run yet.
+
 db:create creates the database
+
 db:drop deletes the database
+
 db:schema:load creates tables and columns within the (existing) database following schema.rb
+
 db:setup does db:create, db:schema:load, db:seed
+
 db:reset does db:drop, db:setup
+
+
+
+steps to follow to make changes to code:
+
+make sure repo is cloned
+
+git checkout develop
+
+git pull
+
+git branch feature/<your feature name>
+
+make all your changes, make sure your code works by running ‘rails server’
+
+once finished, push to your feature branch:
+
+git commit -m “description of changes”
+
+git push origin feature/<your feature name>
+
+git checkout develop
+
+git merge feature/<your feature name>
