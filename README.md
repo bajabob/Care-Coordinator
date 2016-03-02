@@ -52,6 +52,8 @@ make all your changes, make sure your code works by running ‘rails server’ a
 
 once finished, push to your feature branch:
 
+git add .
+
 git commit -m “description of changes”
 
 git push origin feature/yourFeatureName
