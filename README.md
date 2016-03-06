@@ -9,10 +9,63 @@
 * Visit `http://localhost:3000/test/index`. If you see the text `The test works`, then you have properly installed the application.
 
 
-Rake commands:
+###Rake commands:
 db:migrate runs (single) migrations that have not run yet.
+
 db:create creates the database
+
 db:drop deletes the database
+
 db:schema:load creates tables and columns within the (existing) database following schema.rb
+
 db:setup does db:create, db:schema:load, db:seed
+
 db:reset does db:drop, db:setup
+
+
+
+#Steps to follow to make changes to code
+
+make sure repo is cloned
+
+git checkout develop
+
+git pull
+
+git branch feature/yourFeatureName
+
+git checkout feature/yourFeatureName
+
+bundle install
+
+rake db:migrate
+
+rake db:seed
+
+rails server
+
+go to http://localhost:3000
+
+if you see the Care Coordinator page it worked
+
+make all your changes, make sure your code works by running ‘rails server’ after making a change to a file. you will not push anything until you finish your feature
+
+once finished, push to your feature branch:
+
+git add .
+
+git commit -m “description of changes”
+
+git push origin feature/yourFeatureName
+
+git checkout develop
+
+git merge feature/yourFeatureName
+
+git add .
+
+git commit -m “description of changes”
+
+git push origin develop
+
+**Do not push to master! Only Bob will do this to make sure we dont break anything :) **

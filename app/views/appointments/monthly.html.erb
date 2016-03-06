@@ -3,3 +3,6 @@
 <% @appointments.each do |t| %>
     <p><%= t.title %></p>
 <% end %>
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
