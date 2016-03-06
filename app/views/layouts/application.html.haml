@@ -7,10 +7,21 @@
     = csrf_meta_tags
 
   %body
-    %h1.title Care Coordinator
-    =link_to "Daily", appointments_daily_path, :class => "button"
-    =link_to "Weekly", appointments_weekly_path, :class => "button"
-    =link_to "Monthly", appointments_monthly_path, :class => "button"
+    .container-fluid
+      .navbar-header
+        .navbar-brand
+          =image_tag("logo.png", size: "200x80")
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => appointments_daily_path}
+              Daily
+          %li
+            %a{:href => appointments_weekly_path}
+              Weekly
+          %li
+            %a{:href => appointments_monthly_path}
+              Monthly
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]

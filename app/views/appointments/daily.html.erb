@@ -1,8 +1,5 @@
-<h1>Today's Appointments</h1>
+<h1>Daily Appointments</h1>
 
-<% @appointments.each do |t| %>
-    <p><%= t.title %></p>
-<% end %>
 <%= calendar number_of_days: 1 do |date| %>
   <%= date %>
 <% end %>

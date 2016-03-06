@@ -1,8 +1,5 @@
-<h1>This Month's Appointments</h1>
+<h1>Monthly Appointments</h1>
 
-<% @appointments.each do |t| %>
-    <p><%= t.title %></p>
-<% end %>
 <%= month_calendar do |date| %>
   <%= date %>
 <% end %>
