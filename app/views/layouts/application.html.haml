@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    = favicon_link_tag 'favicon.png'
     %title Care Coordinator
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -10,7 +11,7 @@
     .container-fluid
       .navbar-header
         .navbar-brand
-          =image_tag("logo.png", size: "200x80")
+          =image_tag("logo2.png", size: "200x80")
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           %li
