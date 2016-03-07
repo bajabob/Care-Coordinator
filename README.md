@@ -60,6 +60,8 @@ git push origin feature/yourFeatureName
 
 git checkout develop
 
+git pull
+
 git merge feature/yourFeatureName
 
 git add .
