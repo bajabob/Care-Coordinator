@@ -1,0 +1,16 @@
+
+<% # Adds js link and code to footer of <body> # %>
+<% content_for :footer_include do %>
+    <%= javascript_include_tag 'underscore' %>
+    <%= javascript_include_tag "calendar" %>
+<% end %>
+
+
+<% # Adds a stylesheet link in <head> # %>
+<% content_for :header_include do %>
+    <%= stylesheet_link_tag "calendar" %>
+<% end %>
+
+
+<% # Actual View Contents # %>
+<div id="calendar"></div>

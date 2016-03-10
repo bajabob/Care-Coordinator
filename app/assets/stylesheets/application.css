@@ -27,5 +27,13 @@ body {
 }
 
 .navbar-inverse{
-    background-image: linear-gradient(to bottom,#286090 0,#222 100%);
+    background-image: linear-gradient(to bottom, #89bdd3 0, #5391AB 100%);
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: #89bdd3;
 }

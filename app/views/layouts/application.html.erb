@@ -11,16 +11,23 @@
 
   <title>Care Coordinator</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <%= stylesheet_link_tag 'bootstrap.min' %>
+  <%= stylesheet_link_tag 'bootstrap-theme.min.css' %>
+  <%= stylesheet_link_tag 'application' %>
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!--
+    Need to add content here from your view?
 
-  <!-- Bootstrap Core CSS -->
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    Use the following blocks in your view. It will render at the yield below. Make
+      sure to uncomment "content_for" and "end"
+    <% #content_for :header_include do %>
+      ## HTML, JS, OR CSS GOES HERE ##
+    <% #end %>
+
+    Need to do files? http://stackoverflow.com/a/3438707/454336
+  -->
+  <%= yield :header_include %>
+
 
 </head>
 
@@ -42,16 +49,22 @@
       </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <!--
+           Adding more links:
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+        -->
         <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Services</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
+          <a href="#">Logout (Bailey)</a>
         </li>
       </ul>
     </div>
@@ -64,16 +77,45 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h1>Logo Nav by Start Bootstrap</h1>
-      <p>Note: You may need to adjust some CSS based on the size of your logo. The default logo size is 150x50 pixels.</p>
+
+      <%= yield %>
+
     </div>
   </div>
 </div>
 <!-- /.container -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<%= javascript_include_tag 'jquery.min.js' %>
+<%= javascript_include_tag 'bootstrap.min.js' %>
+<!--
+    Need to add content here from your view?
+
+    Use the following blocks in your view. It will render at the yield below. Make
+      sure to uncomment "content_for" and "end"
+    <% #content_for :footer_include do %>
+      ## HTML, JS, OR CSS GOES HERE ##
+    <% #end %>
+
+    Need to do files? http://stackoverflow.com/a/3438707/454336
+  -->
+<%= yield :footer_include %>
+
+<script type="text/javascript">
+  var calendar = $('#calendar').calendar({
+    tmpl_path: "/tmpls/",
+    events_source: [
+      {
+        "id": 293,
+        "title": "Event 1",
+        "url": "http://example.com",
+        "class": "event-important",
+        "start": 12039485678000, // Milliseconds
+        "end": 1234576967000 // Milliseconds
+      }]
+  });
+</script>
 
 </body>
 
