@@ -18,4 +18,5 @@ Rails.application.config.assets.precompile += %w( bootstrap.min.css )
 # for calendar: https://github.com/Serhioromano/bootstrap-calendar
 Rails.application.config.assets.precompile += %w( calendar.css )
 Rails.application.config.assets.precompile += %w( calendar.js )
+Rails.application.config.assets.precompile += %w( calendar.init.js )
 Rails.application.config.assets.precompile += %w( underscore.js )
