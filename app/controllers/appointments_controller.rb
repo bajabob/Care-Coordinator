@@ -1,13 +1,13 @@
 class AppointmentsController < ApplicationController
-  def daily
-    @appointments = Test.all
-  end
-  def weekly
-    @appointments = Test.all
-  end
-  def monthly
-    @appointments = Test.all
-  end
 
-  def view ; end
+  def view
+
+    @cal_data = Array.new
+
+    Itinerary.get_all_by_user_id(1).each { |i|
+      @cal_data.push i.to_bootstrap_calendar_hash
+    }
+
+    p @cal_data.inspect
+  end
 end
