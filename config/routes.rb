@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   get 'appointments/daily'
   get 'appointments/weekly'
   get 'appointments/monthly'
+  get 'appointments/view'
   #get 'test/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :appointments
-  root :to => redirect('/appointments/daily')
+  root :to => redirect('/appointments/view')
   
   # Example resource route with options:
   #   resources :products do

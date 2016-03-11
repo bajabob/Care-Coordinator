@@ -1,49 +1,39 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- * #c9c9c9 dark gray
- * #e3e3e3 light gray
- * #9ad3de light blue
- * #89bdd3 blue
+/*!
+ * Start Bootstrap - Logo Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-h1 {
-  color: #9ad3de;
-  font-size: 150%;
-  font-style: italic;
-  display: block;
-  width: 100%;
-  border-bottom: 1px solid DarkSlateGrey;
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
-h1.title {
-  margin: 0 0 1em;
-  padding: 10px;
-  background-color: #89bdd3;
-  color: white;
-  border-bottom: 4px solid #e3e3e3;
-  font-size: 2em;
-  font-style: normal;
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
 }
-.button {
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: white;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-  border-radius: 25px;
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
+
+.navbar-inverse{
+    background-image: linear-gradient(to bottom, #89bdd3 0, #5391AB 100%);
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: #89bdd3;
 }

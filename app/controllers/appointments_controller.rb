@@ -9,4 +9,5 @@ class AppointmentsController < ApplicationController
     @appointments = Test.all
   end
 
+  def view ; end
 end
