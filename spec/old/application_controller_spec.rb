@@ -3,7 +3,7 @@ require 'spec_helper'
 #https://github.com/kendallflutey/rspec-controller-testing
 
 #Change "ItemController" to the appropriate name
-describe AppointmentsController do
+describe ApplicationController do
 
 #--------------------------------------#
 #          The #new action             #
