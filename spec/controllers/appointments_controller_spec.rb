@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 #https://github.com/kendallflutey/rspec-controller-testing
 
