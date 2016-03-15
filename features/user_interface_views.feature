@@ -4,14 +4,12 @@ Feature: View daily, weekly, and monthly schedule
   So I can view the daily, weekly, and monthly schedule
   I want to switch between views
 
-Scenario: Going to weekly view from daily view
+Scenario: When the homepage is loaded, a calendar is rendered.
 
   Given I am on the Care Coordinator home page
-  When I follow Weekly
-  Then I should be on the weekly view page
+  Then I should see a calendar
 
-Scenario: Going to monthly view from daily view
+Scenario: A user's events should be displayed in a column
 
-Given I am on the Care Coordinator home page
-  When I follow Monthly
-  Then I should be on the monthly view page
+  Given I am on the Care Coordinator home page
+  Then I should see events
