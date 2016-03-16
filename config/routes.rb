@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'accounts/login'
+
   get 'appointments/daily'
   get 'appointments/weekly'
   get 'appointments/monthly'
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :appointments
+  resources :accounts
   root :to => redirect('/appointments/view')
   
   # Example resource route with options:
