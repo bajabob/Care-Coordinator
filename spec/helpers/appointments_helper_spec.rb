@@ -1,5 +1,6 @@
 require 'rails_helper'
-
+require 'simplecov'
+SimpleCov.start
 # Specs in this file have access to a helper object that includes
 # the AppointmentsHelper. For example:
 #
