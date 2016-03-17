@@ -8,11 +8,12 @@ class Itinerary < ActiveRecord::Base
 
     # JSON properties can be found here
     # https://github.com/Serhioromano/bootstrap-calendar
-
+    # https://www.youtube.com/watch?v=dQw4w9WgXcQ
+    s = "/appointments/#{self.id}"
     object = {
         :id     => self.id,
         :title  => self.description,
-        :url    => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        :url    => s,
         :class  => 'event-success',
         :start  => self.start.to_time.to_i * 1000,  # convert to milliseconds
         :end    => self.end.to_time.to_i * 1000     # convert to milliseconds

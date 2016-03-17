@@ -12,17 +12,26 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+    @care_providers = CareProvider.ids
   end
 
   def create
   end
 
   def edit
+    id = params[:id] 
+    @appointment = Itinerary.find(id)
+    @care_providers = CareProvider.ids
   end
 
   def update
   end
 
   def destroy
+  end
+
+  def show
+    id = params[:id] 
+    @appointment = Itinerary.find(id)
   end
 end

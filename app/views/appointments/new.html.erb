@@ -1,2 +1,19 @@
-<h3>Add Appointment</h3>
+<h3>New Appointment</h3>
+
+<%= form_tag appointments_path do %>
+  <%= label :appointment, :description, 'Title' %>
+  <%= text_field :appointment, 'title' %>
+  <br>
+  <%= label :appointment, :care_provider_id, 'Care Provider' %>
+  <%= select :appointment, :care_provider_id, @care_providers %>
+    <br>
+  <%= label :appointment, :start, 'Start Date' %>
+  <%= datetime_select :appointment, :start %>
+  <br>
+  <%= label :appointment, :end, 'End Date' %>
+  <%= datetime_select :appointment, :end %>
+  <br>
+  <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
+<% end %>
+
 

@@ -1,2 +1,17 @@
-<h3>Edit Appointment</h3>
+<h3>Update Appointment</h3>
 
+<%= form_tag appointment_path(@appointment), :method => :put do %>
+  <%= label :appointment, :description, 'Description' %>
+  <%= text_field :appointment, 'description' %>
+  <br>
+  <%= label :appointment, :care_provider_id, 'Care Provider' %>
+  <%= select :appointment, :care_provider_id, @care_providers %>
+    <br>
+  <%= label :appointment, :start, 'Start Date' %>
+  <%= datetime_select :appointment, :start %>
+  <br>
+  <%= label :appointment, :end, 'End Date' %>
+  <%= datetime_select :appointment, :end %>
+  <br>
+  <%= submit_tag 'Update Appointment Info', :class => 'btn btn-primary' %>
+<% end %>

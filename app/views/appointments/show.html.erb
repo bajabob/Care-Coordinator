@@ -1,0 +1,24 @@
+<% # in app/views/appointments/show.html.haml %>
+<h3>Details about <%= @appointment.description %></h3>
+<ul id="details">
+  <li>
+    Title:
+    <%= @appointment.description %>
+  </li>
+  <li>
+    Care Provider:
+    <%= @appointment.care_provider_id %>
+  </li>
+  <li>
+    Starts on:
+    <%= @appointment.start.to_s(:long) %>
+  </li>
+  <li>
+    Ends on:
+    <%= @appointment.end.to_s(:long) %>
+  </li>
+</ul>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment), :class => 'btn btn-primary' %>
+<%= button_to 'Delete', appointment_path(@appointment), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary' %>
+<%= link_to 'Back to calendar', appointments_view_path, :class => 'btn btn-primary'%>
