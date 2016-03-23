@@ -1,2 +1,17 @@
-<h3>New Account Screen</h3>
 
+<% # Adds a stylesheet link in <head> # %>
+<% content_for :header_include do %>
+    <%= stylesheet_link_tag "account-new" %>
+<% end %>
+
+<form class="form-submit-account">
+  <h1 class="form-submit-account-heading text-muted">Create New Account</h1>
+  <input type="text" class="bottom form-control" placeholder="First Name" required="">
+  <input type="text" class="middle form-control" placeholder="Last Name" required="">
+  <input type="text" class="middle form-control" placeholder="Email Address" required="" autofocus="">
+  <input type="text" class="middle form-control" placeholder="Phone Number" required="">
+  <input type="password" class="middle form-control" placeholder="Password" required="">
+  <input type="password" class="top form-control" placeholder="Confirm Password" required="">
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Make Account</button>
+</form>

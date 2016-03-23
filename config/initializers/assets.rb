@@ -18,6 +18,7 @@ Rails.application.config.assets.precompile += %w( bootstrap-theme.min.css )
 Rails.application.config.assets.precompile += %w( bootstrap-responsive.css )
 Rails.application.config.assets.precompile += %w( landing.css )
 Rails.application.config.assets.precompile += %w( login.css )
+Rails.application.config.assets.precompile += %w( account-new.css )
 
 # for calendar: https://github.com/Serhioromano/bootstrap-calendar
 Rails.application.config.assets.precompile += %w( calendar.css )
