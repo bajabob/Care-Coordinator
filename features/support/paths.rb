@@ -6,6 +6,9 @@ module NavigationHelpers
     when /^the (Care Coordinator )home\s?page$/
       '/appointments/view'
 
+    when /^the New Appointment page$/
+      '/appointments/new'
+
     else
       begin
         page_name =~ /^the (.*) page$/
