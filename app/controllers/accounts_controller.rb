@@ -1,5 +1,8 @@
 class AccountsController < ApplicationController
+  layout "landing"
+
   def login
+    # todo
   end
 
   def new

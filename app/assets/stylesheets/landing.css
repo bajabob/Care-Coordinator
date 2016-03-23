@@ -1,0 +1,11 @@
+body{
+    /* overrides default white BG set in bootstrap-theme.css */
+    background-color: transparent;
+}
+.background {
+    background: url('/img/blue-bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}

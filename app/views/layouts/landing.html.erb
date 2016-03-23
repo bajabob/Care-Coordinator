@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="background" lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Care Coordinator</title>
+  <%= favicon_link_tag 'favicon.png' %>
+  <%= stylesheet_link_tag 'bootstrap' %>
+  <%= stylesheet_link_tag 'bootstrap-theme.min.css' %>
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'landing' %>
+
+  <!--
+    Need to add content here from your view?
+
+    Use the following blocks in your view. It will render at the yield below. Make
+      sure to uncomment "content_for" and "end"
+    <% #content_for :header_include do %>
+      ## HTML, JS, OR CSS GOES HERE ##
+    <% #end %>
+
+    Need to do files? http://stackoverflow.com/a/3438707/454336
+  -->
+  <%= yield :header_include %>
+
+</head>
+
+<body>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <%= yield %>
+
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+
+<%= javascript_include_tag 'jquery.min.js' %>
+<%= javascript_include_tag 'underscore-min' %>
+<%= javascript_include_tag 'bootstrap.min.js' %>
+
+</body>
+
+</html>
