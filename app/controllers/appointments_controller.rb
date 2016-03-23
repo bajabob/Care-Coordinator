@@ -37,11 +37,11 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Itinerary.find params[:id]
     #@appointment.update_attributes!(params[:appointment])
-    #puts(@appointment)
-    @appointment.update(:description => params[:appointment][:description])
     puts(@appointment)
+    @appointment.update(:description => params[:appointment][:description])
     #@appointment.update(:start => Date.new(params[:appointment][:start]["1i"])
-    @appointment.update(self.convert(params[:appointment]))
+    @appointment.update(:start => self.convert(params[:appointment]))
+    puts(@appointment)
 
     #puts(DateTimeHelper.convert([:appointment][:start]))
     #puts(params[:appointment][:description])
