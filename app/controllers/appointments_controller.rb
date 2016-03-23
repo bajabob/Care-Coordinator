@@ -1,4 +1,13 @@
 class AppointmentsController < ApplicationController
+  include DateTimeHelper
+
+  def convert date
+  somedate = DateTime.new(date["start(1i)"].to_i,
+                          date["start(2i)"].to_i,
+                          date["start(3i)"].to_i,
+                          date["start(4i)"].to_i,
+                          date["start(5i)"].to_i)
+  end
 
   def view
 
@@ -16,6 +25,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+
   end
 
   def edit
@@ -25,6 +35,18 @@ class AppointmentsController < ApplicationController
   end
 
   def update
+    @appointment = Itinerary.find params[:id]
+    #@appointment.update_attributes!(params[:appointment])
+    #puts(@appointment)
+    @appointment.update(:description => params[:appointment][:description])
+    puts(@appointment)
+    #@appointment.update(:start => Date.new(params[:appointment][:start]["1i"])
+    @appointment.update(self.convert(params[:appointment]))
+
+    #puts(DateTimeHelper.convert([:appointment][:start]))
+    #puts(params[:appointment][:description])
+    #flash[:notice] = "#{@appointment.title} was successfully updated."
+    redirect_to appointment_path(@appointment)
   end
 
   def destroy
