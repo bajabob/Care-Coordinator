@@ -568,22 +568,25 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/features/support/paths.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/features/support/paths.rb": [
         1,
         null,
         1,
-        2,
+        3,
+        null,
+        null,
+        1,
+        null,
+        null,
+        0,
         null,
         null,
         2,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        2,
+        2,
+        2,
+        2,
+        1,
         null,
         null,
         null,
@@ -592,7 +595,7 @@
         null,
         1
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/features/support/selectors.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/features/support/selectors.rb": [
         1,
         null,
         null,
@@ -633,9 +636,45 @@
         null,
         1
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/features/step_definitions/web_steps.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/features/step_definitions/web_steps.rb": [
         1,
-        2,
+        3,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
         null,
         null,
         1,
@@ -643,22 +682,31 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
         1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/controllers/appointments_controller.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/controllers/appointments_controller.rb": [
         1,
         null,
         1,
         null,
-        2,
-        null,
-        2,
-        30,
-        null,
-        null,
-        2,
-        null,
+        1,
         null,
         1,
         0,
@@ -669,11 +717,6 @@
         null,
         1,
         0,
-        0,
-        0,
-        null,
-        null,
-        1,
         null,
         null,
         1,
@@ -682,46 +725,58 @@
         1,
         0,
         0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
         null,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/controllers/application_controller.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/application_helper.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/accounts_helper.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/helpers/accounts_helper.rb": [
         1,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/appointments_helper.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/helpers/appointments_helper.rb": [
         1,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/movies_helper.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/helpers/movies_helper.rb": [
         1,
         null,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/test_helper.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/helpers/test_helper.rb": [
         1,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/tmpls_helper.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/helpers/tmpls_helper.rb": [
         1,
         null
       ],
-      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/models/itinerary.rb": [
+      "/Users/AxiosMD/Documents/Github/Care-Coordinator/app/models/itinerary.rb": [
         1,
         null,
         1,
-        2,
+        1,
         null,
         null,
         1,
@@ -729,8 +784,8 @@
         null,
         null,
         null,
-        30,
-        30,
+        0,
+        0,
         null,
         null,
         null,
@@ -739,13 +794,13 @@
         null,
         null,
         null,
-        30,
+        0,
         null,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1458768543
+    "timestamp": 1458773925
   }
 }

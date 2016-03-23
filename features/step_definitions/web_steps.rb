@@ -2,6 +2,8 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+#Add Appointment Tests
+
 Then(/^I should see a calendar$/) do
   page.has_xpath?("//div[@class='cal-month-box']")
 end
@@ -31,5 +33,31 @@ When(/^Save Changes is clicked$/) do
 end
 
 Then(/^a new appointment is created$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+#Edit Appointment Tests
+
+When(/^I press on an Appointment$/) do
+  click_link("test")
+end
+
+Then(/^I should be on the Appointment page$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I press on Edit$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should be on the Update Appointment page$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^Update Appointment Info is clicked$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^appointment is updated$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
