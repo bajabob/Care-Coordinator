@@ -1,4 +1,21 @@
 class AppointmentsController < ApplicationController
+  include DateTimeHelper
+
+  def convertStart date
+  somedate = DateTime.new(date["start(1i)"].to_i,
+                          date["start(2i)"].to_i,
+                          date["start(3i)"].to_i,
+                          date["start(4i)"].to_i,
+                          date["start(5i)"].to_i)
+  end
+
+  def convertEnd date
+  somedate = DateTime.new(date["end(1i)"].to_i,
+                          date["end(2i)"].to_i,
+                          date["end(3i)"].to_i,
+                          date["end(4i)"].to_i,
+                          date["end(5i)"].to_i)
+  end
 
   def view
 
@@ -16,6 +33,15 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    puts(params[:appointment])
+    @appointment = Itinerary.create!(:description => params[:appointment][:description], 
+                  :start => self.convertStart(params[:appointment]), 
+                  :care_provider_id => params[:appointment][:care_provider_id],
+                  :end => self.convertEnd(params[:appointment]),
+                  :user_id => 1)
+
+    flash[:notice] = "#{@appointment.description} was successfully created."
+    redirect_to appointments_view_path
   end
 
   def edit
@@ -25,6 +51,13 @@ class AppointmentsController < ApplicationController
   end
 
   def update
+    @appointment = Itinerary.find params[:id]
+    puts(@appointment)
+    @appointment.update(:description => params[:appointment][:description])
+    @appointment.update(:start => self.convertStart(params[:appointment]))
+    @appointment.update(:end => self.convertEnd(params[:appointment]))
+    @appointment.update(:care_provider_id => params[:appointment][:care_provider_id])
+    redirect_to appointment_path(@appointment)
   end
 
   def destroy
