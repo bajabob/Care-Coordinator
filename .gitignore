@@ -22,3 +22,6 @@ log
 
 # IDE's
 .idea/
+
+# Ignore simplecov coverage file
+/coverage/*
