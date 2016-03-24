@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-24T14:43:03-05:00">2016-03-24T14:43:03-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-24T14:53:48-05:00">2016-03-24T14:53:48-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">74.07%</span></span>
+    (<span class="covered_percent"><span class="red">61.82%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.97
+       <span class="green">
+         1.04
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>13</b> files in total.
-    <b>108</b> relevant lines. 
-    <span class="green"><b>80</b> lines covered</span> and
-    <span class="red"><b>28</b> lines missed </span>
+    <b>110</b> relevant lines. 
+    <span class="green"><b>68</b> lines covered</span> and
+    <span class="red"><b>42</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#aaafd2c2211bd8fc48151d83321c48e8e5d190a1" class="src_link" title="app/controllers/appointments_controller.rb">app/controllers/appointments_controller.rb</a></td>
-        <td class="yellow strong">85.29 %</td>
+        <td class="red strong">61.76 %</td>
         <td>71</td>
         <td>34</td>
-        <td>29</td>
-        <td>5</td>
-        <td>1.2</td>
+        <td>21</td>
+        <td>13</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -147,27 +147,27 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>1.9</td>
+        <td>5.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#e9fb6181d1a36065f2280ef4744c54d3e7a7fe10" class="src_link" title="features/step_definitions/web_steps.rb">features/step_definitions/web_steps.rb</a></td>
-        <td class="red strong">69.44 %</td>
-        <td>75</td>
-        <td>36</td>
-        <td>25</td>
-        <td>11</td>
-        <td>0.8</td>
+        <td class="red strong">57.89 %</td>
+        <td>79</td>
+        <td>38</td>
+        <td>22</td>
+        <td>16</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#051d1aa5e24d20166bda7e54789a21304bbef880" class="src_link" title="features/support/paths.rb">features/support/paths.rb</a></td>
-        <td class="red strong">46.67 %</td>
+        <td class="red strong">40.0 %</td>
         <td>34</td>
         <td>15</td>
-        <td>7</td>
-        <td>8</td>
-        <td>0.7</td>
+        <td>6</td>
+        <td>9</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
@@ -253,11 +253,11 @@
         <div class="source_table" id="aaafd2c2211bd8fc48151d83321c48e8e5d190a1">
   <div class="header">
     <h3>app/controllers/appointments_controller.rb</h3>
-    <h4><span class="yellow">85.29 %</span> covered</h4>
+    <h4><span class="red">61.76 %</span> covered</h4>
     <div>
       <b>34</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>13</b> lines missed.</span>
     </div>
   </div>
   
@@ -384,8 +384,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
           
           <code class="ruby">    @cal_data = Array.new</code>
         </li>
@@ -396,14 +396,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="23">
+          <span class="hits">2</span>
           
           <code class="ruby">    Itinerary.get_all_by_user_id(1).each { |i|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="24">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="11" data-linenumber="24">
+          <span class="hits">11</span>
           
           <code class="ruby">      @cal_data.push i.to_bootstrap_calendar_hash</code>
         </li>
@@ -420,8 +420,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
           <code class="ruby">    p @cal_data.inspect</code>
         </li>
@@ -444,8 +444,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
+        <li class="covered" data-hits="2" data-linenumber="31">
+          <span class="hits">2</span>
           
           <code class="ruby">    @care_providers = CareProvider.pluck(:office_name) </code>
         </li>
@@ -468,14 +468,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
           
           <code class="ruby">    @care_provider_id = CareProvider.where(:office_name =&gt; params[:appointment][:office_name]).first.id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
           <code class="ruby">    @appointment = Itinerary.create!(:description =&gt; params[:appointment][:description], </code>
         </li>
@@ -510,14 +510,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
           
           <code class="ruby">    flash[:notice] = &quot;#{@appointment.description} was successfully created.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
-          
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
           
           <code class="ruby">    redirect_to appointments_view_path</code>
         </li>
@@ -540,20 +540,20 @@
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="47">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="47">
+          
           
           <code class="ruby">    id = params[:id] </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="48">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="48">
+          
           
           <code class="ruby">    @appointment = Itinerary.find(id)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="49">
+          
           
           <code class="ruby">    @care_providers = CareProvider.pluck(:office_name) </code>
         </li>
@@ -576,8 +576,8 @@
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="53">
+          
           
           <code class="ruby">    @appointment = Itinerary.find params[:id]</code>
         </li>
@@ -588,38 +588,38 @@
           <code class="ruby">    #turn the care provider office name into care provider id to update the appointment</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="55">
+          
           
           <code class="ruby">    @care_provider_id = CareProvider.where(:office_name =&gt; params[:appointment][:care_provider_id]).first.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
           
           <code class="ruby">    @appointment.update(:description =&gt; params[:appointment][:description])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="57">
+          
           
           <code class="ruby">    @appointment.update(:start =&gt; self.convertStart(params[:appointment]))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
           
           <code class="ruby">    @appointment.update(:end =&gt; self.convertEnd(params[:appointment]))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="59">
+          
           
           <code class="ruby">    @appointment.update(:care_provider_id =&gt; @care_provider_id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="60">
+          
           
           <code class="ruby">    redirect_to appointment_path(@appointment)</code>
         </li>
@@ -660,20 +660,20 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="67">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="67">
+          
           
           <code class="ruby">    id = params[:id] </code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="68">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
           
           <code class="ruby">    @appointment = Itinerary.find(id)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="69">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="69">
+          
           
           <code class="ruby">    @careProvider = CareProvider.find(@appointment.care_provider_id)</code>
         </li>
@@ -942,8 +942,8 @@
           <code class="ruby">  def self.get_all_by_user_id (user_id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
           <code class="ruby">    self.where(:user_id =&gt; user_id)</code>
         </li>
@@ -990,14 +990,14 @@
           <code class="ruby">    # https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="12">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="11" data-linenumber="12">
+          <span class="hits">11</span>
           
           <code class="ruby">    s = &quot;/appointments/#{self.id}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="11" data-linenumber="13">
+          <span class="hits">11</span>
           
           <code class="ruby">    object = {</code>
         </li>
@@ -1050,8 +1050,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="22">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="11" data-linenumber="22">
+          <span class="hits">11</span>
           
           <code class="ruby">    return object</code>
         </li>
@@ -1087,11 +1087,11 @@
         <div class="source_table" id="e9fb6181d1a36065f2280ef4744c54d3e7a7fe10">
   <div class="header">
     <h3>features/step_definitions/web_steps.rb</h3>
-    <h4><span class="red">69.44 %</span> covered</h4>
+    <h4><span class="red">57.89 %</span> covered</h4>
     <div>
-      <b>36</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
-      <span class="red"><b>11</b> lines missed.</span>
+      <b>38</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>16</b> lines missed.</span>
     </div>
   </div>
   
@@ -1104,8 +1104,8 @@
           <code class="ruby">Given /^(?:|I )am on (.+)$/ do |page_name|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="2">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="2">
+          <span class="hits">2</span>
           
           <code class="ruby">  visit path_to(page_name)</code>
         </li>
@@ -1188,8 +1188,8 @@
           <code class="ruby">When(/^I press on New Appointment$/) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
           <code class="ruby">  click_link(&quot;New Appointment&quot;)</code>
         </li>
@@ -1212,14 +1212,14 @@
           <code class="ruby">Then(/^I should be on the New Appointment page$/) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">  if page.respond_to? :should</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
           <code class="ruby">    page.should have_content(&quot;New Appointment&quot;)</code>
         </li>
@@ -1284,8 +1284,8 @@
           <code class="ruby">When(/^I press on Save Changes$/) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
-          
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
           <code class="ruby">  click_button(&quot;Save Changes&quot;)</code>
         </li>
@@ -1308,52 +1308,52 @@
           <code class="ruby">Then(/^a new appointment is created$/) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  pending # Write code here that turns the phrase above into concrete actions</code>
+          <code class="ruby">   if page.respond_to? :should</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">    page.should have_content(&quot;Today&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
-          <code class="ruby">#Edit Appointment Tests</code>
+          <code class="ruby">    assert page.has_content?(&quot;Today&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
-          <code class="ruby">When(/^I press on an appointment$/) do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="42">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  visit path_to(&quot;appointment&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">#Edit Appointment Tests</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
@@ -1365,61 +1365,61 @@
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">Then(/^I should be on an appointment page$/) do</code>
+          <code class="ruby">When(/^I press on an appointment$/) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="46">
           
-          <code class="ruby">  if page.respond_to? :should</code>
+          
+          <code class="ruby">  visit path_to(&quot;appointment&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    page.should have_content(&quot;Details about&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">  else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="49">
-          
-          
-          <code class="ruby">    assert page.has_content?(&quot;Details about&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">When(/^I press on Edit$/) do</code>
+          <code class="ruby">Then(/^I should be on an appointment page$/) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="50">
           
-          <code class="ruby">  click_link(&quot;Edit&quot;)</code>
+          
+          <code class="ruby">  if page.respond_to? :should</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="51">
+          
+          
+          <code class="ruby">    page.should have_content(&quot;Details about&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">  else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="53">
+          
+          
+          <code class="ruby">    assert page.has_content?(&quot;Details about&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
@@ -1437,61 +1437,61 @@
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">Then(/^I should be on the Update Appointment page$/) do</code>
+          <code class="ruby">When(/^I press on Edit$/) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="58">
           
-          <code class="ruby">  if page.respond_to? :should</code>
+          
+          <code class="ruby">  click_link(&quot;Edit&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    page.should have_content(&quot;Update Appointment&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
-          <code class="ruby">  else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="61">
-          
-          
-          <code class="ruby">    assert page.has_content?(&quot;Update Appointment&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">When(/^Update Appointment Info is clicked$/) do</code>
+          <code class="ruby">Then(/^I should be on the Update Appointment page$/) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="62">
           
-          <code class="ruby">  click_button(&quot;Update Appointment Info&quot;)</code>
+          
+          <code class="ruby">  if page.respond_to? :should</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="63">
+          
+          
+          <code class="ruby">    page.should have_content(&quot;Update Appointment&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">  else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
+          
+          <code class="ruby">    assert page.has_content?(&quot;Update Appointment&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
@@ -1509,40 +1509,64 @@
         <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
-          <code class="ruby">Then(/^appointment is updated$/) do</code>
+          <code class="ruby">When(/^Update Appointment Info is clicked$/) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="70">
           
-          <code class="ruby">  if page.respond_to? :should</code>
+          
+          <code class="ruby">  click_button(&quot;Update Appointment Info&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="71">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="71">
           
-          <code class="ruby">    page.should have_content(&quot;Details about&quot;)</code>
+          
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">Then(/^appointment is updated$/) do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="74">
+          
+          
+          <code class="ruby">  if page.respond_to? :should</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="75">
+          
+          
+          <code class="ruby">    page.should have_content(&quot;Details about&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
           <code class="ruby">  else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="77">
           
           
           <code class="ruby">    assert page.has_content?(&quot;Details about&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby">end</code>
@@ -1555,11 +1579,11 @@
         <div class="source_table" id="051d1aa5e24d20166bda7e54789a21304bbef880">
   <div class="header">
     <h3>features/support/paths.rb</h3>
-    <h4><span class="red">46.67 %</span> covered</h4>
+    <h4><span class="red">40.0 %</span> covered</h4>
     <div>
       <b>15</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>8</b> lines missed.</span>
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -1584,8 +1608,8 @@
           <code class="ruby">  def path_to(page_name)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="4">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
           <code class="ruby">    case page_name</code>
         </li>
@@ -1620,8 +1644,8 @@
           <code class="ruby">    when /^the New Appointment page$/</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
           <code class="ruby">      &#39;/appointments/new&#39;</code>
         </li>
@@ -1638,8 +1662,8 @@
           <code class="ruby">    when /appointment/</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
           
           <code class="ruby">      &#39;/appointments/1&#39;</code>
         </li>
@@ -1674,8 +1698,8 @@
           <code class="ruby">    when /^the Update Appointment page$/</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
           
           <code class="ruby">      &#39;/appointments/1/edit&#39;</code>
         </li>

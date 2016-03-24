@@ -33,7 +33,11 @@ When(/^I press on Save Changes$/) do
 end
 
 Then(/^a new appointment is created$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+   if page.respond_to? :should
+    page.should have_content("Today")
+  else
+    assert page.has_content?("Today")
+  end
 end
 
 #Edit Appointment Tests
