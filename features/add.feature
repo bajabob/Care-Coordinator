@@ -14,5 +14,5 @@ Scenario: When information is inputted into new appointment fields, and they are
 
   Given I am on the New Appointment page
   When appointment information is inputted
-  And Save Changes is clicked
+  And I press on Save Changes
   Then a new appointment is created

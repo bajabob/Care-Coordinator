@@ -9,6 +9,15 @@ module NavigationHelpers
     when /^the New Appointment page$/
       '/appointments/new'
 
+    when /appointment/
+      '/appointments/1'
+
+    when /^the appointment page$/
+      '/appointments/1'
+
+    when /^the Update Appointment page$/
+      '/appointments/1/edit'
+
     else
       begin
         page_name =~ /^the (.*) page$/

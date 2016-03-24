@@ -25,10 +25,10 @@ Then(/^I should be on the New Appointment page$/) do
 end
 
 When(/^appointment information is inputted$/) do
-  fill_in("appointment_title", :with => "test")
+  fill_in("appointment_description", :with => "test")
 end
 
-When(/^Save Changes is clicked$/) do
+When(/^I press on Save Changes$/) do
   click_button("Save Changes")
 end
 
@@ -38,24 +38,32 @@ end
 
 #Edit Appointment Tests
 
-When(/^I press on an Appointment$/) do
-  click_link("test")
+When(/^I press on an appointment$/) do
+  visit path_to("appointment")
 end
 
-Then(/^I should be on the Appointment page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should be on an appointment page$/) do
+  if page.respond_to? :should
+    page.should have_content("Details about")
+  else
+    assert page.has_content?("Details about")
+  end
 end
 
 When(/^I press on Edit$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link("Edit")
 end
 
 Then(/^I should be on the Update Appointment page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  if page.respond_to? :should
+    page.should have_content("Update Appointment")
+  else
+    assert page.has_content?("Update Appointment")
+  end
 end
 
 When(/^Update Appointment Info is clicked$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button("Update Appointment Info")
 end
 
 Then(/^appointment is updated$/) do
