@@ -4,8 +4,8 @@
   <%= label :appointment, :description, 'Description' %>
   <%= text_field :appointment, 'description' %>
   <br>
-  <%= label :appointment, :care_provider_id, 'Care Provider' %>
-  <%= select :appointment, :care_provider_id, @care_providers %>
+  <%= label :appointment, :office_name, 'Care Provider' %>
+  <%= select :appointment, :office_name, @care_providers %>
     <br>
   <%= label :appointment, :start, 'Start Date' %>
   <%= datetime_select :appointment, :start %>

@@ -28,14 +28,14 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @care_providers = CareProvider.ids
+    @care_providers = CareProvider.pluck(:office_name) 
   end
 
   def create
-    puts(params[:appointment])
+    @care_provider_id = CareProvider.where(:office_name => params[:appointment][:office_name]).first.id
     @appointment = Itinerary.create!(:description => params[:appointment][:description], 
                   :start => self.convertStart(params[:appointment]), 
-                  :care_provider_id => params[:appointment][:care_provider_id],
+                  :care_provider_id => @care_provider_id,
                   :end => self.convertEnd(params[:appointment]),
                   :user_id => 1)
 
@@ -46,16 +46,17 @@ class AppointmentsController < ApplicationController
   def edit
     id = params[:id] 
     @appointment = Itinerary.find(id)
-    @care_providers = CareProvider.ids
+    @care_providers = CareProvider.pluck(:office_name) 
   end
 
   def update
     @appointment = Itinerary.find params[:id]
-    puts(@appointment)
+    #turn the care provider office name into care provider id to update the appointment
+    @care_provider_id = CareProvider.where(:office_name => params[:appointment][:care_provider_id]).first.id
     @appointment.update(:description => params[:appointment][:description])
     @appointment.update(:start => self.convertStart(params[:appointment]))
     @appointment.update(:end => self.convertEnd(params[:appointment]))
-    @appointment.update(:care_provider_id => params[:appointment][:care_provider_id])
+    @appointment.update(:care_provider_id => @care_provider_id)
     redirect_to appointment_path(@appointment)
   end
 
@@ -65,5 +66,6 @@ class AppointmentsController < ApplicationController
   def show
     id = params[:id] 
     @appointment = Itinerary.find(id)
+    @careProvider = CareProvider.find(@appointment.care_provider_id)
   end
 end
