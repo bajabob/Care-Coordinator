@@ -568,19 +568,19 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/features/support/paths.rb": [
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/features/support/paths.rb": [
         1,
         null,
         1,
+        8,
+        null,
+        null,
         4,
         null,
         null,
         1,
         null,
         null,
-        0,
-        null,
-        null,
         2,
         null,
         null,
@@ -604,7 +604,7 @@
         null,
         1
       ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/features/support/selectors.rb": [
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/features/support/selectors.rb": [
         1,
         null,
         null,
@@ -645,30 +645,10 @@
         null,
         1
       ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/features/step_definitions/web_steps.rb": [
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/features/step_definitions/web_steps.rb": [
         1,
-        3,
+        7,
         null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
         null,
         null,
         null,
@@ -677,13 +657,7 @@
         null,
         null,
         1,
-        0,
-        null,
-        null,
         1,
-        0,
-        null,
-        null,
         null,
         null,
         1,
@@ -695,6 +669,20 @@
         1,
         null,
         0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null,
         null,
         null,
@@ -715,27 +703,64 @@
         null,
         null,
         1,
+        1,
+        1,
+        null,
         0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
         null
       ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/controllers/appointments_controller.rb": [
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/controllers/appointments_controller.rb": [
         1,
         null,
         1,
-        null,
-        1,
-        null,
-        1,
-        3,
+        2,
         null,
         null,
-        1,
+        null,
+        null,
         null,
         null,
         1,
-        0,
+        2,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        5,
+        null,
+        5,
+        21,
+        null,
+        null,
+        5,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         1,
         null,
         null,
@@ -746,52 +771,11 @@
         null,
         null,
         1,
-        null,
-        null,
         1,
-        null,
-        null,
         1,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/controllers/application_controller.rb": [
         1,
-        null,
-        null,
         1,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/helpers/application_helper.rb": [
         1,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/helpers/accounts_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/helpers/appointments_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/helpers/movies_helper.rb": [
-        1,
-        null,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/helpers/test_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/helpers/tmpls_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/models/itinerary.rb": [
-        1,
-        null,
         1,
         1,
         null,
@@ -799,11 +783,59 @@
         1,
         null,
         null,
-        null,
-        null,
+        1,
         3,
         3,
         null,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/accounts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/appointments_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/movies_helper.rb": [
+        1,
+        null,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/test_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/helpers/tmpls_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/models/itinerary.rb": [
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        21,
+        21,
         null,
         null,
         null,
@@ -811,17 +843,18 @@
         null,
         null,
         null,
-        3,
+        null,
+        21,
         null,
         null,
         null,
         null
       ],
-      "/Users/jfairchild23/Documents/Code/GitHub/Care-Coordinator/app/models/care_provider.rb": [
+      "/Users/baileybauman/Documents/CSCE 431/project/Care-Coordinator/app/models/care_provider.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1458779334
+    "timestamp": 1458830773
   }
 }

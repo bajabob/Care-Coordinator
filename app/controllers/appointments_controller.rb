@@ -1,5 +1,4 @@
 class AppointmentsController < ApplicationController
-  include DateTimeHelper
 
   def convertStart date
   somedate = DateTime.new(date["start(1i)"].to_i,
