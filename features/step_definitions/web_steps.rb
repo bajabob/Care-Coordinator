@@ -67,5 +67,9 @@ When(/^Update Appointment Info is clicked$/) do
 end
 
 Then(/^appointment is updated$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  if page.respond_to? :should
+    page.should have_content("Details about")
+  else
+    assert page.has_content?("Details about")
+  end
 end
