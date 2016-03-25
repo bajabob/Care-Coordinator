@@ -59,6 +59,7 @@ class AppointmentsController < ApplicationController
     @appointment.update(:start => self.convertStart(params[:appointment]))
     @appointment.update(:end => self.convertEnd(params[:appointment]))
     @appointment.update(:care_provider_id => @care_provider_id)
+    flash[:notice] = "#{@appointment.description} was successfully updated."
     redirect_to appointment_path(@appointment)
   end
 
