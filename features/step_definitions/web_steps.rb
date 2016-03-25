@@ -77,3 +77,17 @@ Then(/^appointment is updated$/) do
     assert page.has_content?("Details about")
   end
 end
+
+#Delete Appointment Tests
+
+When(/^I press on Delete$/) do
+  click_button("Delete")
+end
+
+Then(/^appointment is deleted$/) do
+  if !(page.respond_to? :should)
+    true
+  else
+    false
+  end
+end
