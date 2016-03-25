@@ -21,7 +21,5 @@ class Itinerary < ActiveRecord::Base
     }
 
     return object
-
   end
-
 end
