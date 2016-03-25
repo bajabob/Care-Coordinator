@@ -61,6 +61,11 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
+    id = params[:id] 
+    @appointment = Itinerary.find(id)
+    Itinerary.find(id).destroy
+    flash[:notice] = "#{@appointment.description} was successfully deleted."
+    redirect_to appointments_view_path
   end
 
   def show
