@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :email_links
+  has_many :itineraries
   def create_new (name_first, name_last, email, plaintext_password, sms_phone)
     @user = User.new
     @user.name_first=name_first
