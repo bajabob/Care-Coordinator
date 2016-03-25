@@ -17,10 +17,13 @@ class AccountsController < ApplicationController
         redirect_to appointments_view_path
         return
       end
+    else
+      flash[:warning] = 'Invalid Email/Password Combination'
+      return
     end
 
     if(params.include?('email'))
-      flash[:warning] = 'Invalid Email/Password Combination'
+      
     end
 
   end
@@ -31,18 +34,20 @@ class AccountsController < ApplicationController
 
   def create
     # todo issue #95
-
-    if(params[:password] == params[:password_confirm])
+    puts params.inspect
+    if(params[:user][:password] == params[:user][:password_confirm])
       puts 'passwords match'
-      bcrypt = BCrypt::Password.create(params[:password])
-      @account = User.create!(:name_first => params[:first_name], :name_last => [:last_name], :email => params[:email], :sms_phone => params[:phone], :password => bcrypt)
+      bcrypt = BCrypt::Password.create(params[:user][:password])
+      @account = User.create!(:name_first => params[:user][:first_name], :name_last => params[:user][:last_name], :email => params[:user][:email], :sms_phone => params[:user][:phone], :password => bcrypt)
 
 
       session[:user_id] = @account.id
       flash[:info] = "#{@account.name_first} was successfully created."
       redirect_to appointments_view_path
     else
+      puts 'passwords dont match'
       flash[:warning] = 'Passwords do not match'
+      redirect_to new_appointment_path
     end
   end
 
