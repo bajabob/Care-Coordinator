@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'accounts/login'
+  post 'accounts/login'
 
   get 'appointments/daily'
   get 'appointments/weekly'

@@ -3,10 +3,11 @@
     <%= stylesheet_link_tag "login" %>
 <% end %>
 
-<form class="form-signin">
-  <h1 class="form-signin-heading text-muted">Care Coordinator</h1>
-  <input type="text" class="form-control" placeholder="Email Address" required="" autofocus="">
-  <input type="password" class="form-control" placeholder="Password" required="">
+<%= form_tag accounts_login_path, :method => :post, :class => 'form-signin', :url => accounts_login_path do %>
+    <h1 class="form-signin-heading text-muted">Care Coordinator</h1>
+
+  <input name="email" type="text" class="form-control" placeholder="Email Address" required="" autofocus="">
+  <input name="password" type="password" class="form-control" placeholder="Password" required="">
   <div class="row">
     <div class="col-md-8">
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
@@ -15,4 +16,4 @@
       <a href="/accounts/new" class="btn btn-lg btn-link btn-block">Sign Up</a>
     </div>
   </div>
-</form>
+<% end %>

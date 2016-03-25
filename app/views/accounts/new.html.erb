@@ -4,14 +4,15 @@
     <%= stylesheet_link_tag "account-new" %>
 <% end %>
 
-<form class="form-submit-account">
+
+<%= form_tag accounts_path, :method => :post, :class => "form-submit-account", :url => accounts_path do %>
   <h1 class="form-submit-account-heading text-muted">Create New Account</h1>
-  <input type="text" class="bottom form-control" placeholder="First Name" required="">
-  <input type="text" class="middle form-control" placeholder="Last Name" required="">
-  <input type="text" class="middle form-control" placeholder="Email Address" required="" autofocus="">
-  <input type="text" class="middle form-control" placeholder="Phone Number" required="">
-  <input type="password" class="middle form-control" placeholder="Password" required="">
-  <input type="password" class="top form-control" placeholder="Confirm Password" required="">
+  <input name="first_name" type="text" class="bottom form-control" placeholder="First Name" required="">
+  <input name="last_name" type="text" class="middle form-control" placeholder="Last Name" required="">
+  <input name="email" type="text" class="middle form-control" placeholder="Email Address" required="" autofocus="">
+  <input name="phone" type="text" class="middle form-control" placeholder="Phone Number" required="">
+  <input name="password" type="password" class="middle form-control" placeholder="Password" required="">
+  <input name="password_confirm" type="password" class="top form-control" placeholder="Confirm Password" required="">
 
   <button class="btn btn-lg btn-primary btn-block" type="submit">Make Account</button>
-</form>
+<% end %>

@@ -1,5 +1,7 @@
 class AppointmentsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def convertStart date
   somedate = DateTime.new(date["start(1i)"].to_i,
                           date["start(2i)"].to_i,

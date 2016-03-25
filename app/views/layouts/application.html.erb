@@ -84,6 +84,19 @@
   <div class="row">
     <div class="col-lg-12">
 
+      <div class="row">
+        <div class="col-md-6 col-lg-offset-3">
+          <div class="flashNotices" id="flash">
+            <% flash.each do |key, value| %>
+                <%= content_tag(:div, class: "alert alert-#{key}") do%>
+                    <button type="button" class="close flashClose" data-dismiss="alert">&times;</button>
+                    <%= value %>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
       <%= yield %>
 
     </div>
