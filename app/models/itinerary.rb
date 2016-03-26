@@ -9,6 +9,8 @@ class Itinerary < ActiveRecord::Base
 
   def to_bootstrap_calendar_hash
 
+    puts self.inspect
+
     # JSON properties can be found here
     # https://github.com/Serhioromano/bootstrap-calendar
     # https://www.youtube.com/watch?v=dQw4w9WgXcQ

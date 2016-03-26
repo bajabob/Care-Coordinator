@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get 'appointments/weekly'
   get 'appointments/monthly'
   get 'appointments/view'
+
+  # leave next line (please)
   #get 'test/index'
+  # ######
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
