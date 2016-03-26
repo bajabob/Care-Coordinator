@@ -38,7 +38,8 @@ class AccountsController < ApplicationController
     if(params[:user][:password] == params[:user][:password_confirm])
       puts 'passwords match'
       bcrypt = BCrypt::Password.create(params[:user][:password])
-      @account = User.create!(:name_first => params[:user][:first_name], :name_last => params[:user][:last_name], :email => params[:user][:email], :sms_phone => params[:user][:phone], :password => bcrypt)
+      @account = User.create!(:name_first => params[:user][:first_name], :name_last => params[:user][:last_name],
+                              :email => params[:user][:email], :sms_phone => params[:user][:phone], :password => bcrypt)
 
 
       session[:user_id] = @account.id

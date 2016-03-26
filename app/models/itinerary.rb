@@ -1,6 +1,8 @@
 class Itinerary < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   belongs_to :user
+  has_one :itinerary_status
+
   def self.get_all_by_user_id (user_id)
     self.where(:user_id => user_id)
   end

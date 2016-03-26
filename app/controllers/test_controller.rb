@@ -1,7 +1,5 @@
 class TestController < ApplicationController
-
-  before_action :authenticate_user!
-
   def index
+    puts Time.now.inspect
   end
 end
