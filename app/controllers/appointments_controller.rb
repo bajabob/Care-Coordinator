@@ -22,7 +22,7 @@ class AppointmentsController < ApplicationController
 
     @cal_data = Array.new
 
-    Itinerary.get_all_by_user_id(1).each { |i|
+    Itinerary.get_all_by_user_id( current_user.id ).each { |i|
       @cal_data.push i.to_bootstrap_calendar_hash
     }
 
@@ -39,9 +39,9 @@ class AppointmentsController < ApplicationController
                   :start => self.convertStart(params[:appointment]), 
                   :care_provider_id => @care_provider_id,
                   :end => self.convertEnd(params[:appointment]),
-                  :user_id => 1)
+                  :user_id => current_user.id)
 
-    flash[:notice] = "#{@appointment.description} was successfully created."
+    flash[:info] = "#{@appointment.description} was successfully created."
     redirect_to appointments_view_path
   end
 
@@ -59,7 +59,7 @@ class AppointmentsController < ApplicationController
     @appointment.update(:start => self.convertStart(params[:appointment]))
     @appointment.update(:end => self.convertEnd(params[:appointment]))
     @appointment.update(:care_provider_id => @care_provider_id)
-    flash[:notice] = "#{@appointment.description} was successfully updated."
+    flash[:info] = "#{@appointment.description} was successfully updated."
     redirect_to appointment_path(@appointment)
   end
 
@@ -67,7 +67,7 @@ class AppointmentsController < ApplicationController
     id = params[:id] 
     @appointment = Itinerary.find(id)
     Itinerary.find(id).destroy
-    flash[:notice] = "#{@appointment.description} was successfully deleted."
+    flash[:info] = "#{@appointment.description} was successfully deleted."
     redirect_to appointments_view_path
   end
 

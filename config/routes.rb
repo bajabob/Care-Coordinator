@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'accounts/login'
+  get 'accounts/logout'
   post 'accounts/login'
 
   get 'appointments/daily'
@@ -8,8 +9,8 @@ Rails.application.routes.draw do
   get 'appointments/monthly'
   get 'appointments/view'
 
-  # leave next line (please)
-  #get 'test/index'
+  # leave next line, used for various testing
+  get 'test/index'
   # ######
 
   # The priority is based upon order of creation: first created -> highest priority.

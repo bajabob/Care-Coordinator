@@ -3,12 +3,21 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_filter :set_user_name_first
+
   protected
 
   # check if a user is currently logged in, used as a before_filter in controllers
   def authenticate_user!
     if(!session[:user_id].present?)
       redirect_to accounts_login_url
+    end
+  end
+
+  # sets this global variable for access to the layout to say Logout(USERS_NAME_FIRST)
+  def set_user_name_first
+    if(session[:user_id].present?)
+      @user_name_first = current_user.name_first
     end
   end
 
