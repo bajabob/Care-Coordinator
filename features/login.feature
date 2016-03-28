@@ -18,4 +18,5 @@ Scenario: When incorrect login information is entered, a user cannot log in
   When I fill Email Address with "jfairchild23@gmail.com"
   And I fill Password with "6102cc"
   And I press "Login"
-  Then I should on the login page
+  Then I should have a warning
+  And I should be on the login page

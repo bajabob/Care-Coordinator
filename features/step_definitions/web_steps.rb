@@ -105,6 +105,16 @@ Then(/^I should on the Care Coordinator home page$/) do
   expect(find('.page-header'))
 end
 
-Then(/^I should on the login page$/) do
+Then(/^I should have a warning$/) do
   expect(find('.alert-warning'))
+end
+
+Then(/^I should be on the login page$/) do
+  expect(find('.form-signin'))
+end
+
+# Logout Step Definitions
+
+Then(/^I should get a logout pop up$/) do
+  expect(find('.alert-info'))
 end
