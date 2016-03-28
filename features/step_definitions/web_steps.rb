@@ -1,8 +1,23 @@
+Given /^I am an authenticated user$/ do
+  visit "/accounts/login"
+  fill_in "Email Address", :with => "jfairchild23@gmail.com"
+  fill_in "Password", :with => "cc2016"
+  click_button "Login"
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-#Add Appointment Tests
+When(/^I press "([^"]*)"$/) do |arg1|
+  click_button(arg1)
+end
+
+When(/^I click on "([^"]*)"$/) do |arg1|
+  click_link(arg1)
+end
+
+# Add Step Definitions
 
 Then(/^I should see a calendar$/) do
   page.has_xpath?("//div[@class='cal-month-box']")
@@ -10,10 +25,6 @@ end
 
 Then(/^I should see events$/) do
   page.has_xpath?("//div[@id='eventlist']")
-end
-
-When(/^I press on New Appointment$/) do
-  click_link("New Appointment")
 end
 
 Then(/^I should be on the New Appointment page$/) do
@@ -28,10 +39,6 @@ When(/^appointment information is inputted$/) do
   fill_in("appointment_description", :with => "test")
 end
 
-When(/^I press on Save Changes$/) do
-  click_button("Save Changes")
-end
-
 Then(/^a new appointment is created$/) do
    if page.respond_to? :should
     page.should have_content("Today")
@@ -40,7 +47,7 @@ Then(/^a new appointment is created$/) do
   end
 end
 
-#Edit Appointment Tests
+# Edit Step Definitions
 
 When(/^I press on an appointment$/) do
   visit path_to("appointment")
@@ -52,10 +59,6 @@ Then(/^I should be on an appointment page$/) do
   else
     assert page.has_content?("Details about")
   end
-end
-
-When(/^I press on Edit$/) do
-  click_link("Edit")
 end
 
 Then(/^I should be on the Update Appointment page$/) do
@@ -78,11 +81,7 @@ Then(/^appointment is updated$/) do
   end
 end
 
-#Delete Appointment Tests
-
-When(/^I press on Delete$/) do
-  click_button("Delete")
-end
+# Delete Step Definitions
 
 Then(/^appointment is deleted$/) do
   if !(page.respond_to? :should)
@@ -90,4 +89,22 @@ Then(/^appointment is deleted$/) do
   else
     false
   end
+end
+
+# Login Step Definitions
+
+When(/^I fill Email Address with "([^"]*)"$/) do |arg1|
+  fill_in('Email Address', :with => arg1)
+end
+
+When(/^I fill Password with "([^"]*)"$/) do |arg1|
+  fill_in('Password', :with => arg1)
+end
+
+Then(/^I should on the Care Coordinator home page$/) do
+  expect(find('.page-header'))
+end
+
+Then(/^I should on the login page$/) do
+  expect(find('.alert-warning'))
 end
