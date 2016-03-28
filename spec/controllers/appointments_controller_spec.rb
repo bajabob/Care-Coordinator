@@ -33,11 +33,15 @@ describe AppointmentsController do
      it 'should update an appointment' do
       @m=Itinerary.create :start => {"start(1i)" => 2016, "start(2i)" => 3, "start(3i)" => 2, "start(4i)" => 8, "start(5i)" => 30}, :description => "Get Blood", :id => "1000", :care_provider_id => "1"
       put :update, :id => "1000", :appointment => {"start(1i)" => 2016, "start(2i)" => 3, "start(3i)" => 2, "start(4i)" => 8, "start(5i)" => 30, "end(1i)" => 2016, "end(2i)" => 3, "end(3i)" => 2, "end(4i)" => 8, "end(5i)" => 30, :care_provider_id => "Dallas Health Group"}
-      flash[:notice].should =~ /updated/i
+      flash[:info].should =~ /updated/i
     end
     it 'should create an appointment' do
       post :create, :appointment => {"start(1i)" => 2016, "start(2i)" => 3, "start(3i)" => 2, "start(4i)" => 8, "start(5i)" => 30, "end(1i)" => 2016, "end(2i)" => 3, "end(3i)" => 2, "end(4i)" => 8, "end(5i)" => 30, :office_name => "Dallas Health Group"}
-      flash[:notice].should =~ /created/i
+      flash[:info].should =~ /created/i
+    end
+    it 'should delete an appointment' do
+       @m=Itinerary.create :description => "Get Blood", :id => "1000", :care_provider_id => "1"
+       delete :destroy, :id => 1000
     end
   end
   describe "convert date functions" do
