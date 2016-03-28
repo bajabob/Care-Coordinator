@@ -31,4 +31,15 @@ RSpec.describe AccountsController, type: :controller do
       flash[:warning].should =~ /match/i
     end
   end
+  describe "logout" do 
+    it 'should post logout' do
+      post :logout
+      { :get => accounts_logout_path }.
+        should route_to(:controller => "accounts", :action => "logout")
+    end
+    it 'should not create an appointment' do
+      post :create, :user => {:name_first => "b", :name_last => "b", :email => "random@gmail.com", :sms_phone => "b", :password => "pass", :password_confirm => "pass2"}
+      flash[:warning].should =~ /match/i
+    end
+  end
 end
