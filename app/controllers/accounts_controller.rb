@@ -5,7 +5,12 @@ class AccountsController < ApplicationController
   layout "landing"
 
   def login
-    puts params
+
+    # dont allow user to view this page if they are already logged in
+    if(session[:user_id].present?)
+      redirect_to appointments_view_path
+      return
+    end
 
     # make sure emails are unique in the database
     @user = User.where(:email => params[:email]).first
