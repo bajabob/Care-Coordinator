@@ -4,17 +4,30 @@ RSpec.describe AccountsController, type: :controller do
 
   describe "GET #login" do
     it "returns http success" do
-      get :login
-      expect(response).to have_http_status(:success)
+      if session[:user_id].present?
+        get :login
+        expect(response).to have_http_status(:success)
+      else
+        @u=User.create :name_first => "a", :name_last => "a", :email => "testemail@gmail.com", :sms_phone => "a", :password => "pass"
+        current_user = @u
+        get :login
+        expect(response).to have_http_status(:redirect)
+      end
+    end
+    it "returns http redirect" do
+      if !session[:user_id].present?
+        get :login
+        expect(response).to have_http_status(:redirect)
+      end
     end
   end
   describe "create" do 
     it 'should create an appointment' do
-      post :create, :user => {:name_first => "a", :name_last => "a", :email => "a", :sms_phone => "a", :password => "pass", :password_confirm => "pass"}
+      post :create, :user => {:name_first => "a", :name_last => "a", :email => "testemail@gmail.com", :sms_phone => "a", :password => "pass", :password_confirm => "pass"}
       flash[:info].should =~ /created/i
     end
     it 'should not create an appointment' do
-      post :create, :user => {:name_first => "b", :name_last => "b", :email => "b", :sms_phone => "b", :password => "pass", :password_confirm => "pass2"}
+      post :create, :user => {:name_first => "b", :name_last => "b", :email => "random@gmail.com", :sms_phone => "b", :password => "pass", :password_confirm => "pass2"}
       flash[:warning].should =~ /match/i
     end
   end
