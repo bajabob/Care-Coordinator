@@ -91,3 +91,33 @@ Then(/^appointment is deleted$/) do
     false
   end
 end
+
+#Sign Up Tests
+
+When(/^I press on the Sign Up link$/) do
+  click_link("Sign Up")
+end
+
+Then(/^I should be on the Sign Up page$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^account information is inputted$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^Make Account is clicked$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^account is created$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I press on Make Account$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should be on the Calendar page$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
