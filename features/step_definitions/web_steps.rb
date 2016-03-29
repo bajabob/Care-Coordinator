@@ -101,7 +101,7 @@ When(/^I fill Password with "([^"]*)"$/) do |arg1|
   fill_in('Password', :with => arg1)
 end
 
-Then(/^I should on the Care Coordinator home page$/) do
+Then(/^I should be on the Care Coordinator home page$/) do
   expect(find('.page-header'))
 end
 
@@ -118,3 +118,66 @@ end
 Then(/^I should get a logout pop up$/) do
   expect(find('.alert-info'))
 end
+#Sign Up Tests
+
+# When(/^I press on the Sign Up link$/) do
+#   click_link("Sign Up")
+# end
+
+Then(/^I should be on the Sign Up page$/) do
+  expect(find('.form-submit-account'))
+end
+
+When(/^account information is inputted$/) do
+  fill_in("first_name_new", :with => "john")
+  fill_in("last_name_new", :with => "smith")
+  fill_in("email_new", :with => "derp@gmail.com")
+  fill_in("phone_new", :with => "1234567890")
+  fill_in("password_new", :with => "password")
+  fill_in("password_confirm_new", :with => "password")
+end
+
+# When(/^Make Account is clicked$/) do
+#   click_button("Make Account")
+# end
+
+Then(/^account is created$/) do
+  if page.respond_to? :should
+    page.should have_content("john")
+  else
+    assert page.has_content?("john")
+  end
+end
+
+When(/^incorrect password information is inputted$/) do
+  fill_in("first_name_new", :with => "john")
+  fill_in("last_name_new", :with => "smith")
+  fill_in("email_new", :with => "derp@gmail.com")
+  fill_in("phone_new", :with => "1234567890")
+  fill_in("password_new", :with => "pass")
+  fill_in("password_confirm_new", :with => "word")
+end
+
+Then(/^I should on the login page$/) do
+  expect(find('.form-signin'))
+end
+
+# Then(/^Login page is rerendered$/) do
+#   if page.respond_to? :should
+#     page.should have_content("Care Coordinator")
+#   else
+#     assert page.has_content?("Care Coordinator")
+#   end
+# end
+
+# When(/^I press on Make Account$/) do
+#   click_button("Make Account")
+# end
+
+# Then(/^I should be on the Calendar page$/) do
+#    if page.respond_to? :should
+#     page.should have_content("Today")
+#   else
+#     assert page.has_content?("Today")
+#   end
+# end

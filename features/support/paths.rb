@@ -12,8 +12,8 @@ module NavigationHelpers
     when /appointment/
       '/appointments/1'
 
-    when /^the appointment page$/
-      '/appointments/1'
+    # when /^the appointment page$/
+    #   '/appointments/1'
 
     when /^the Update Appointment page$/
       '/appointments/1/edit'
@@ -21,6 +21,9 @@ module NavigationHelpers
     when /^the login page$/
       '/accounts/login'
 
+    when /^the Sign Up page$/
+      '/accounts/new'
+      
     else
       begin
         page_name =~ /^the (.*) page$/

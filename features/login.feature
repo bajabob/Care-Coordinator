@@ -10,7 +10,7 @@ Scenario: When correct login information is entered, a user logs in successfully
   When I fill Email Address with "jfairchild23@gmail.com"
   And I fill Password with "cc2016"
   And I press "Login"
-  Then I should on the Care Coordinator home page
+  Then I should be on the Care Coordinator home page
 
 Scenario: When incorrect login information is entered, a user cannot log in
 
