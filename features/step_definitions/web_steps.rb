@@ -99,25 +99,59 @@ When(/^I press on the Sign Up link$/) do
 end
 
 Then(/^I should be on the Sign Up page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  if page.respond_to? :should
+    page.should have_content("Create New Account")
+  else
+    assert page.has_content?("Create New Account")
+  end
 end
 
 When(/^account information is inputted$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in("first_name_new", :with => "john")
+  fill_in("last_name_new", :with => "smith")
+  fill_in("email_new", :with => "derp@gmail.com")
+  fill_in("phone_new", :with => "1234567890")
+  fill_in("password_new", :with => "password")
+  fill_in("password_confirm_new", :with => "password")
 end
 
 When(/^Make Account is clicked$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button("Make Account")
 end
 
 Then(/^account is created$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  if page.respond_to? :should
+    page.should have_content("john")
+  else
+    assert page.has_content?("john")
+  end
+end
+
+When(/^incorrect password information is inputted$/) do
+  fill_in("first_name_new", :with => "john")
+  fill_in("last_name_new", :with => "smith")
+  fill_in("email_new", :with => "derp@gmail.com")
+  fill_in("phone_new", :with => "1234567890")
+  fill_in("password_new", :with => "pass")
+  fill_in("password_confirm_new", :with => "word")
+end
+
+Then(/^Login page is rerendered$/) do
+  if page.respond_to? :should
+    page.should have_content("Care Coordinator")
+  else
+    assert page.has_content?("Care Coordinator")
+  end
 end
 
 When(/^I press on Make Account$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button("Make Account")
 end
 
 Then(/^I should be on the Calendar page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+   if page.respond_to? :should
+    page.should have_content("Today")
+  else
+    assert page.has_content?("Today")
+  end
 end

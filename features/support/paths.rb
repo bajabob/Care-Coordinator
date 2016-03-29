@@ -18,6 +18,12 @@ module NavigationHelpers
     when /^the Update Appointment page$/
       '/appointments/1/edit'
 
+    when /^the login page$/
+      '/accounts/login'
+
+    when /^the Sign Up page$/
+      '/accounts/new'
+      
     else
       begin
         page_name =~ /^the (.*) page$/

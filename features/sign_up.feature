@@ -6,7 +6,7 @@ Feature: Sign up for account
 
 Scenario: When the Sign Up link is clicked, sign up page is rendered
 
-  Given I am on the Care Coordinator login page
+  Given I am on the login page
   When I press on the Sign Up link
   Then I should be on the Sign Up page
 
@@ -16,6 +16,13 @@ Scenario: When information is inputted into fields, and they are saved, then acc
   When account information is inputted
   And Make Account is clicked
   Then account is created
+
+Scenario: When password is inputted into fields, and they are not the same, then Login page is rerendered
+
+  Given I am on the Sign Up page
+  When incorrect password information is inputted
+  And Make Account is clicked
+  Then Login page is rerendered
 
 Scenario: When Make Account button is clicked, calendar page is rendered
 
