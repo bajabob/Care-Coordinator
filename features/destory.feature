@@ -6,13 +6,15 @@ Feature: Destroy Appointment
 
 Scenario: When an Appointment button is clicked, appointment page is rendered
 
-  Given I am on the Care Coordinator home page
+  Given I am an authenticated user
+  And I am on the Care Coordinator home page
   When I press on an appointment
   Then I should be on an appointment page
 
 Scenario: When Delete button is clicked, appointment is deleted
 
-  Given I am on the appointment page
-  When I press on Delete
+  Given I am an authenticated user
+  And I am on the appointment page
+  When I press "Delete"
   Then appointment is deleted
   And I am on the Care Coordinator home page

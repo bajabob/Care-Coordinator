@@ -12,8 +12,8 @@ module NavigationHelpers
     when /appointment/
       '/appointments/1'
 
-    when /^the appointment page$/
-      '/appointments/1'
+    # when /^the appointment page$/
+    #   '/appointments/1'
 
     when /^the Update Appointment page$/
       '/appointments/1/edit'
