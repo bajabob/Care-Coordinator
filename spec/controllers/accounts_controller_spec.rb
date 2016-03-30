@@ -21,6 +21,10 @@ RSpec.describe AccountsController, type: :controller do
         expect(response).to have_http_status(:success)
       end
     end
+    it "login not right" do
+        post :login, :email => "bailey.bauman@tamu.edu", :password => "wrong"
+        flash[:warning].should =~ /Invalid/i
+    end
   end
   describe "create" do 
     it 'should create an appointment' do
