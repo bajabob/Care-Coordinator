@@ -1,0 +1,35 @@
+<h3>Update Appointment</h3>
+
+<%= form_tag provider_path(@provider), :method => :put do %>
+  <%= label :provider, :office_name, 'Office Name' %>
+  <%= text_field :provider, 'office_name' %>
+  <br>
+  <%= label :provider, :office_phone, 'Office Phone' %>
+  <%= text_field :provider, 'office_phone' %>
+  <br>
+  <%= label :provider, :office_phone_ext, 'Office Phone Ext' %>
+  <%= text_field :provider, 'office_phone_ext' %>
+  <br>
+  <%= label :provider, :office_email, 'Office Email' %>
+  <%= text_field :provider, 'office_email' %>  
+  <br>
+  <%= label :provider, :address_line_one, 'Address Line 1' %>
+  <%= text_field :provider, 'address_line_one' %>
+  <br>
+  <%= label :provider, :address_line_two, 'Address Line 2' %>
+  <%= text_field :provider, 'address_line_two' %>
+  <br>
+  <%= label :provider, :city, 'City' %>
+  <%= text_field :provider, 'city' %>
+  <br>
+  <%= label :provider, :state, 'State' %>
+  <%= text_field :provider, 'state' %>
+  <br>
+  <%= label :provider, :zip, 'Zip Code' %>
+  <%= text_field :provider, 'zip' %>
+  <br>
+  <%= label :provider, :physician_name, 'Physician Name' %>
+  <%= text_field :provider, 'physician_name' %>
+  <br>
+  <%= submit_tag 'Update Appointment Info', :class => 'btn btn-primary' %>
+<% end %>
