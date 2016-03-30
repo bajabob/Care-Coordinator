@@ -10,6 +10,7 @@ RSpec.describe AccountsController, type: :controller do
       else
         @u=User.create :name_first => "a", :name_last => "a", :email => "testemail@gmail.com", :sms_phone => "a", :password => "pass"
         current_user = @u
+        session[:user_id] = @u.id
         get :login
         expect(response).to have_http_status(:redirect)
       end
@@ -17,7 +18,7 @@ RSpec.describe AccountsController, type: :controller do
     it "returns http redirect" do
       if !session[:user_id].present?
         get :login
-        expect(response).to have_http_status(:redirect)
+        expect(response).to have_http_status(:success)
       end
     end
   end
