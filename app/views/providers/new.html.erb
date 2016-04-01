@@ -2,7 +2,7 @@
 
 <%= form_tag providers_path do %>
   <%= label :provider, :office_name, 'Office Name' %>
-  <%= text_field :office_name, 'office_name' %>
+  <%= text_field :provider, 'office_name' %>
   <br>
   <%= label :provider, :office_phone, 'Office Phone' %>
   <%= text_field :provider, 'office_phone' %>
@@ -13,8 +13,8 @@
   <%= label :provider, :office_email, 'Office Email' %>
   <%= text_field :provider, 'office_email' %>  
   <br>
-  <%= label :provider, :address_line_two, 'Address Line 1' %>
-  <%= text_field :address_line_one, 'address_line_one' %>
+  <%= label :provider, :address_line_one, 'Address Line 1' %>
+  <%= text_field :provider, 'address_line_one' %>
   <br>
   <%= label :provider, :address_line_two, 'Address Line 2' %>
   <%= text_field :provider, 'address_line_two' %>
