@@ -20,7 +20,11 @@ class ProvidersController < ApplicationController
     end
 
     def destroy
-
+        id = params[:id] 
+        @provider = CareProvider.find(id)
+        CareProvider.find(id).destroy
+        flash[:info] = "#{@provider.physician_name} was successfully deleted."
+        redirect_to appointments_view_path
     end
 
     def show
