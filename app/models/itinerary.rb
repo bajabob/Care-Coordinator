@@ -15,11 +15,22 @@ class Itinerary < ActiveRecord::Base
     # https://github.com/Serhioromano/bootstrap-calendar
     # https://www.youtube.com/watch?v=dQw4w9WgXcQ
     s = "/appointments/#{self.id}"
+    if self.itinerary_status_id == 1
+        title = '(Pending) '
+        css = 'event-info'
+    elsif self.itinerary_status_id == 2
+        title = '(Approved) '
+        css = 'event-success'
+    else
+        title = '(Denied) '
+        css = 'event-warning'
+    end
+    
     object = {
         :id     => self.id,
-        :title  => self.description,
+        :title  => title + self.description,
         :url    => s,
-        :class  => 'event-success',
+        :class  => css,
         :start  => self.start.to_time.to_i * 1000,  # convert to milliseconds
         :end    => self.end.to_time.to_i * 1000     # convert to milliseconds
     }
