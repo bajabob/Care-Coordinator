@@ -89,13 +89,7 @@ body {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 16px;
 }
-.card .card-action a {
-    color: #ffab40;
-    margin-right: 16px;
-    transition: color 0.3s ease;
-    text-transform: uppercase;
-}
 .card .card-action a:hover {
-    color: #ffd8a6;
+    color: #000;
     text-decoration: none;
 }

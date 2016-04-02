@@ -1,17 +1,31 @@
-<h3>Update Appointment</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag("/img/appointments.jpg", class: "img-responsive") %>
+          <span class="card-title">Update Appointment</span>
+        </div>
+        <%= form_tag appointment_path(@appointment), :method => :put do %>
+            <div class="card-content">
+              <%= label :appointment, :description, 'Description' %>
+              <%= text_field :appointment, 'description' %>
+              <br>
+              <%= label :appointment, :care_provider_id, 'Care Provider' %>
+              <%= select :appointment, :care_provider_id, @care_providers %>
+              <br>
+              <%= label :appointment, :start, 'Start Date' %>
+              <%= datetime_select :appointment, :start %>
+              <br>
+              <%= label :appointment, :end, 'End Date' %>
+              <%= datetime_select :appointment, :end %>
+            </div>
 
-<%= form_tag appointment_path(@appointment), :method => :put do %>
-  <%= label :appointment, :description, 'Description' %>
-  <%= text_field :appointment, 'description' %>
-  <br>
-  <%= label :appointment, :care_provider_id, 'Care Provider' %>
-  <%= select :appointment, :care_provider_id, @care_providers %>
-    <br>
-  <%= label :appointment, :start, 'Start Date' %>
-  <%= datetime_select :appointment, :start %>
-  <br>
-  <%= label :appointment, :end, 'End Date' %>
-  <%= datetime_select :appointment, :end %>
-  <br>
-  <%= submit_tag 'Update Appointment Info', :class => 'btn btn-primary' %>
-<% end %>
+            <div class="card-action">
+              <%= submit_tag 'Update Appointment Info', :class => 'btn btn-primary btn-block' %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
