@@ -54,11 +54,7 @@ When(/^I press on an appointment$/) do
 end
 
 Then(/^I should be on an appointment page$/) do
-  if page.respond_to? :should
-    page.should have_content("Details about")
-  else
-    assert page.has_content?("Details about")
-  end
+  expect(find('.card'))
 end
 
 Then(/^I should be on the Update Appointment page$/) do
@@ -73,12 +69,8 @@ When(/^Update Appointment Info is clicked$/) do
   click_button("Update Appointment Info")
 end
 
-Then(/^appointment is updated$/) do
-  if page.respond_to? :should
-    page.should have_content("Details about")
-  else
-    assert page.has_content?("Details about")
-  end
+Then(/^I should get an update pop up$/) do
+  expect(find('.alert-info'))
 end
 
 # Delete Step Definitions
