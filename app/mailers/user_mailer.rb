@@ -1,14 +1,27 @@
-UserMailer.welcome(user: @user, subject: "Welcome!").deliver_now
 class UserMailer < ApplicationMailer
-    default from: "test@test.com"
+  default from: "bailey.bauman@tamu.edu"
 
-  def welcome(user: , subject: , template: "default" )
 
-    # template's default view is "default"
+  # invoke using...
+  # UserMailer.request_verification(
+  #     current_user,
+  #     CareProvider.where(:id => 1).first,
+  #     Itinerary.where(:id => 1).first).deliver_now
+  def request_verification( user, care_provider, itinerary )
     headers "X-SMTPAPI" => {
-     "sub": {
-       "-clinicName-" => "test"
-     },
+      "sub": {
+          "-clinicName-": [care_provider.office_name],
+          "-patientName-": [user.name_first + " " + user.name_last],
+          "-doctorName-": [care_provider.physician_name],
+          "-startDate-": [itinerary.start],
+          "-endDate-": [itinerary.end],
+
+          ## todo, make link to google maps
+          "-location-": [care_provider.address_line_one + " in " + care_provider.city],
+
+          ## todo, should be a link to production or locahost
+          "-link-": ['http://carecoordinator.heroku.com/'],
+      },
      "filters": {
        "templates": {
          "settings": {
@@ -20,12 +33,11 @@ class UserMailer < ApplicationMailer
     }.to_json
 
     mail(
-      from: 'test@test.com',
-      to: 'bailey.bauman@tamu.edu',
-      subject: subject,
-      template_path: 'path/to/view',
-      template_name: template
+      from: user.email,
+      to: care_provider.office_email,
+      subject: "",
+      template_path: 'user_mailer',
+      template_name: "blank"
     )
-    # this would try to render the view: `path/to/view/default.erb`
   end
 end
