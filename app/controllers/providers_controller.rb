@@ -2,6 +2,9 @@ class ProvidersController < ApplicationController
 
     before_action :authenticate_user!
 
+    def index
+      @providers = CareProvider.all
+    end
     def new
 
     end

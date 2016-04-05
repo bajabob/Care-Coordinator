@@ -1,39 +1,54 @@
-<% # in app/views/providers/show.html.haml %>
-<h3>Details about <%= @provider.office_name %></h3>
-<ul id="details">
-  <li>
-    Office Name:
-    <%= @provider.office_name %>
-  </li>
-  <li>
-    Office Phone:
-    <%= @provider.office_phone %>
-  </li>
-  <li>
-    Office Phone Ext:
-    <%= @provider.office_phone_ext %>
-  </li>
-  <li>
-    Office Email:
-    <%= @provider.office_email %>
-  </li>
-  <li>
-    Address:
-    <br>
-    <%= @provider.address_line_one %>
-    <br>
-    <%= @provider.address_line_two %>
-    <br>
-    <%= @provider.city + ", " + @provider.state + ", " + @provider.zip %>
-    
-  </li>
-  <li>
-    Physician Name:
-    <%= @provider.physician_name %>
-  </li>
-
-</ul>
-
-<%= link_to 'Edit', edit_provider_path(@provider), :class => 'btn btn-primary' %>
-<%= button_to 'Delete', provider_path(@provider), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary' %>
-<%= link_to 'Back to calendar', appointments_view_path, :class => 'btn btn-primary'%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag("/img/appointments.jpg", class: "img-responsive") %>
+          <span class="card-title">Details about <%= @provider.office_name %></span>
+        </div>
+          <div class="card-content">
+            <ul id="details">
+              <li>
+                Office Phone:
+                <%= @provider.office_phone %>
+              </li>
+              <li>
+                Office Phone Ext:
+                <%= @provider.office_phone_ext %>
+              </li>
+              <li>
+                Office Email:
+                <%= @provider.office_email %>
+              </li>
+              <li>
+                Address:
+                <br>
+                <%= @provider.address_line_one %>
+                <br>
+                <%= @provider.address_line_two %>
+                <br>
+                <%= @provider.city + ", " + @provider.state + ", " + @provider.zip %>
+                
+              </li>
+              <li>
+                Physician Name:
+                <%= @provider.physician_name %>
+              </li>
+            </ul>
+          </div>
+        <div class="card-action">
+          <div class="row">
+              <div class="col-md-4">
+                <%= link_to 'Edit', edit_provider_path(@provider), :class => 'btn btn-primary btn-block'%>
+              </div>
+              <div class="col-md-4">
+                <%= button_to 'Delete', provider_path(@provider), :method => :delete, :confirm => 'Are you sure?', :class => ' btn btn-warning btn-block' %>
+              </div>
+              <div class="col-md-4">
+                <%= link_to 'Back to calendar', appointments_view_path, :class => 'btn btn-primary btn-block' %>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
