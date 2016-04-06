@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'appointments/monthly'
   get 'appointments/view'
   get 'providers/all'
+  get 'email/verify'
+
   # leave next line, used for various testing
   get 'test/index'
   # ######
