@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Added Calendar Gem
 gem "simple_calendar", "~> 2.0"
 gem 'simplecov', :require => false, :group => :test
+
+gem 'sendgrid'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

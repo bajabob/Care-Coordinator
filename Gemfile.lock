@@ -176,6 +176,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sendgrid (1.2.4)
+      json
     simple_calendar (2.0.6)
       rails (>= 3.0)
     simplecov (0.11.2)
@@ -229,6 +231,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  sendgrid
   simple_calendar (~> 2.0)
   simplecov
   spring
