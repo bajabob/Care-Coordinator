@@ -43,7 +43,7 @@ Then(/^care provider is deleted$/) do
   end
 end
 
-Then(/^I should be on the edit care provider page$/) do
+Then(/^I should be on the edit care providers page$/) do
   if page.respond_to? :should
     page.should have_content("Update Care Provider")
   else
@@ -56,13 +56,10 @@ When(/^care provider information is inputted$/) do
 end
 
 Then(/^I should be on a care provider page$/) do
-  if page.respond_to? :should
-    page.should have_content("Details About")
-  else
-    assert page.has_content?("Details About")
-  end
+  expect(find('.card'))
 end
 
-Then(/^I should be on the edit care providers page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I click on More Info$/) do
+  find_by_id("provider_1").click
 end
+

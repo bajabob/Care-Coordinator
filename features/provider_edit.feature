@@ -15,7 +15,7 @@ Scenario: When More Info button is button, a care provider info page is rendered
 
   Given I am an authenticated user
   And I am on the care providers page
-  When I click on "More Info" for "Dallas Health Group"
+  When I click on More Info
   Then I should be on a care provider page
 
 Scenario: When Edit Care Provider button is pressed, edit care provider page is rendered
