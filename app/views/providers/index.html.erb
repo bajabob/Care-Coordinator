@@ -22,13 +22,16 @@
                       <%= provider.office_name  %>
                     </td>
                     <td>
-                      <%= link_to 'More Info', provider_path(provider), :class => 'btn btn-primary' %>
+                      <%= link_to 'More Info', provider_path(provider), :class => 'btn btn-primary', :id => 'provider_'+provider.id.to_s %>
                     </td>
                   </tr>
                 <% end %>
               </tbody>
             </table>
           </div>
+        <div class="card-action">
+          <%= link_to 'New Care Provider', new_provider_path, :class => 'btn btn-primary btn-block' %>
+        </div>
       </div>
     </div>
   </div>
