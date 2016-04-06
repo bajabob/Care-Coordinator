@@ -5,6 +5,7 @@ class ProvidersController < ApplicationController
     def index
       @providers = CareProvider.all
     end
+    
     def new
 
     end
