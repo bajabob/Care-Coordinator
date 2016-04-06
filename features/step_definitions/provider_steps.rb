@@ -1,8 +1,12 @@
 Then(/^I should be on the care providers page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  if page.respond_to? :should
+    page.should have_content("All Care Providers")
+  else
+    assert page.has_content?("All Care Providers")
+  end
 end
 
-Then(/^I should be on the new care provider page$/) do
+Then(/^I should be on the new care providers page$/) do
   if page.respond_to? :should
     page.should have_content("New Care Provider")
   else
@@ -49,4 +53,16 @@ end
 
 When(/^care provider information is inputted$/) do
   fill_in("provider_office_name", :with => "New Test Hostpital")
+end
+
+Then(/^I should be on a care provider page$/) do
+  if page.respond_to? :should
+    page.should have_content("Details About")
+  else
+    assert page.has_content?("Details About")
+  end
+end
+
+Then(/^I should be on the edit care providers page$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end

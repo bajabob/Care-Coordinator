@@ -15,8 +15,8 @@ Scenario: When New button is pressed, Create Care Provider page is rendered
 
   Given I am an authenticated user
   And I am on the care providers page
-  When I press "New"
-  Then I should be on the new care provider page
+  When I click on "New Care Provider"
+  Then I should be on the new care providers page
 
 Scenario: When information is inputted into new care provider fields, and they are saved, then a new care provider is created
 

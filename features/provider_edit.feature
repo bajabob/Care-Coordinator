@@ -11,12 +11,19 @@ Scenario: When View Care Providers link is clicked, care provider list page is r
   When I click on "View Care Providers"
   Then I should be on the care providers page
 
+Scenario: When More Info button is button, a care provider info page is rendered
+
+  Given I am an authenticated user
+  And I am on the care providers page
+  When I click on "More Info" for "Dallas Health Group"
+  Then I should be on a care provider page
+
 Scenario: When Edit Care Provider button is pressed, edit care provider page is rendered
 
   Given I am an authenticated user
-  And I am on the care provider page
+  And I am on a care provider page
   When I click on "Edit"
-  Then I should be on the edit care provider page
+  Then I should be on the edit care providers page
 
 Scenario: When information is inputted into fields, and they are saved, then care provider is updated
 
@@ -25,4 +32,4 @@ Scenario: When information is inputted into fields, and they are saved, then car
   When care provider information is inputted
   And I press "Update Care Provider Info"
   Then I should get a pop up
-  And I should be on the care providers page
+  And I should be on the Care Coordinator home page

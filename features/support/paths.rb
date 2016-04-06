@@ -22,10 +22,16 @@ module NavigationHelpers
       '/accounts/new'
 
     when /^the care providers page$/
-      '/providers/view'
+      '/providers/'
 
     when /^the new care provider page$/
       '/providers/new'
+
+    when /^a care provider page$/
+      '/providers/1'
+
+    when /^the edit care provider page$/
+      '/providers/1/edit'
       
     else
       begin
