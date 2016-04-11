@@ -39,7 +39,8 @@ class AppointmentsController < ApplicationController
                   :start => self.convertStart(params[:appointment]), 
                   :care_provider_id => @care_provider_id,
                   :end => self.convertEnd(params[:appointment]),
-                  :user_id => current_user.id)
+                  :user_id => current_user.id,
+                  :itinerary_status_id => 1)
 
     flash[:info] = "#{@appointment.description} was successfully created."
     redirect_to appointments_view_path
