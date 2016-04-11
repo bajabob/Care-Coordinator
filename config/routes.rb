@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'providers/all'
   get 'email/verify'
   get 'email/providerresponse'
+  get 'email/invalidkey'
+  get 'email/complete'
+  get 'email/deny'
+  get 'email/approve'
 
   # leave next line, used for various testing
   get 'test/index'

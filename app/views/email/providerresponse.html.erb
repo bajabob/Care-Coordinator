@@ -1,1 +1,70 @@
-response
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag("/img/appointments.jpg", class: "img-responsive") %>
+          <span class="card-title"><%= @appointment.description %></span>
+        </div>
+        <div class="card-content">
+          <ul id="details">
+
+            <% if(@comments.count > 0) %>
+                <h4>Comments</h4>
+                <ul>
+                  <% @comments.each do |comment| %>
+                      <li><strong><%= comment.poster_name %></strong>: <%= comment.comment %></li>
+                  <% end %>
+                </ul>
+                <hr/>
+            <% end %>
+
+            <li>
+              Care Provider:
+              <strong><%= @careProvider.office_name %></strong>
+            </li>
+            <li>
+              Physician Name:
+              <strong><%= @careProvider.physician_name %></strong>
+            </li>
+            <li>
+              Patient Name:
+              <strong><%= @patient.name_first + " " + @patient.name_last %></strong>
+            </li>
+            <li>
+              Patient Email:
+              <strong><%= @patient.email %></strong>
+            </li>
+            <li>
+              Patient Phone:
+              <strong><%= @patient.sms_phone %></strong>
+            </li>
+            <li>
+              City:
+              <strong><%= @careProvider.city %></strong>
+            </li>
+            <li>
+              Starts on:
+              <strong><%= @appointment.start.to_s(:long) %></strong>
+            </li>
+            <li>
+              Ends on:
+              <strong><%= @appointment.end.to_s(:long) %></strong>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-action">
+          <div class="row">
+            <div class="col-md-6">
+              <%= link_to 'Approve Appointment', email_approve_path(:key => @key), :class => 'btn btn-success btn-block'%>
+            </div>
+            <div class="col-md-6">
+              <%= link_to 'Deny Appointment', email_deny_path(:key => @key), :class => 'btn btn-danger btn-block' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
