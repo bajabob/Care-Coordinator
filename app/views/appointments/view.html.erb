@@ -1,3 +1,4 @@
+<p><%= link_to 'Printable Receipt (PDF)', appointments_pdf_path(@Itinerary, format: 'pdf') %></p>
 <% # Adds a stylesheet link in <head> # %>
 <% content_for :header_include do %>
     <%= stylesheet_link_tag "calendar" %>

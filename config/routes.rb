@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'email/complete'
   get 'email/deny'
   get 'email/approve'
+  
+  get 'appointments/pdf'
 
   # leave next line, used for various testing
   get 'test/index'
