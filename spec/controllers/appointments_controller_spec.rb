@@ -40,7 +40,7 @@ describe AppointmentsController do
       flash[:info].should =~ /created/i
     end
     it 'should show an appointment' do
-      @m=Itinerary.create :description => "Get Blood", :id => "1000", :care_provider_id => "1"
+      @m=Itinerary.create :description => "Get Blood", :id => "1000", :care_provider_id => "1", :itinerary_status_id => 1
       get :show, :id => 1000
     end
     it 'should delete an appointment' do
