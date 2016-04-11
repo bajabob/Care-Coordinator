@@ -65,6 +65,9 @@ class EmailController < ApplicationController
       itinerary_status = ItineraryStatus.find_by_const('PROVIDER-APPROVED')
       itinerary.update(:itinerary_status_id => itinerary_status.id)
 
+      @notification = Notification.create!(:description => "#{itinerary.description} has been approved.", 
+                  :read_status => false)
+
       redirect_to email_complete_path
     else
       redirect_to email_invalidkey_path
@@ -81,6 +84,9 @@ class EmailController < ApplicationController
       itinerary = Itinerary.find(transaction.itinerary_id)
       itinerary_status = ItineraryStatus.find_by_const('PROVIDER-DENIED')
       itinerary.update(:itinerary_status_id => itinerary_status.id)
+
+      @notification = Notification.create!(:description => "#{itinerary.description} has been denied.", 
+                  :read_status => false)
 
     else
       redirect_to email_invalidkey_path

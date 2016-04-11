@@ -76,6 +76,9 @@
         <li>
           <%= link_to 'Logout (' + @user_name_first + ')', '/accounts/logout', :id => 'Logout' %>
         </li>
+        <li>
+        <a href="/notification/"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="badge"><%= @notification_count %></span></a><br>
+        </li>
       </ul>
       <% end %>
     </div>
