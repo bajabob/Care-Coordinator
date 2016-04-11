@@ -17,14 +17,17 @@ class Itinerary < ActiveRecord::Base
     # https://www.youtube.com/watch?v=dQw4w9WgXcQ
     s = "/appointments/#{self.id}"
     if self.itinerary_status_id == 1
-        title = '(Pending) '
-        css = 'event-info'
+        title = '(Needs Verified) '
+        css = 'event-warning'
     elsif self.itinerary_status_id == 2
-        title = '(Approved) '
-        css = 'event-success'
+        title = '(Pending) '
+        css = 'event-grey'
+    elsif self.itinerary_status_id == 3
+      title = '(Approved) '
+      css = 'event-success'
     else
         title = '(Denied) '
-        css = 'event-warning'
+        css = 'event-important'
     end
     
     object = {

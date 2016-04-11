@@ -75,5 +75,7 @@ class AppointmentsController < ApplicationController
     id = params[:id] 
     @appointment = Itinerary.find(id)
     @careProvider = CareProvider.find(@appointment.care_provider_id)
+    @status = ItineraryStatus.find(@appointment.itinerary_status_id)
+    @comments = Comment.where(:itinerary_id => @appointment.id)
   end
 end

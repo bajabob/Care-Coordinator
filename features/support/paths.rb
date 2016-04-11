@@ -12,9 +12,6 @@ module NavigationHelpers
     when /appointment/
       '/appointments/1'
 
-    # when /^the appointment page$/
-    #   '/appointments/1'
-
     when /^the Update Appointment page$/
       '/appointments/1/edit'
 
@@ -23,6 +20,18 @@ module NavigationHelpers
 
     when /^the Sign Up page$/
       '/accounts/new'
+
+    when /^the care providers page$/
+      '/providers/'
+
+    when /^the new care provider page$/
+      '/providers/new'
+
+    when /^a care provider page$/
+      '/providers/1'
+
+    when /^the edit care provider page$/
+      '/providers/1/edit'
       
     else
       begin

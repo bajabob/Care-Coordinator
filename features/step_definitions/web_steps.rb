@@ -69,7 +69,7 @@ When(/^Update Appointment Info is clicked$/) do
   click_button("Update Appointment Info")
 end
 
-Then(/^I should get an update pop up$/) do
+Then(/^I should get a pop up$/) do
   expect(find('.alert-info'))
 end
 
@@ -103,12 +103,6 @@ end
 
 Then(/^I should be on the login page$/) do
   expect(find('.form-signin'))
-end
-
-# Logout Step Definitions
-
-Then(/^I should get a logout pop up$/) do
-  expect(find('.alert-info'))
 end
 
 #Sign Up Tests

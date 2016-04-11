@@ -9,5 +9,5 @@ Scenario: When logout is clicked, a user is taken to login page
   Given I am an authenticated user
   And I am on the Care Coordinator home page
   When I click on "Logout"
-  Then I should get a logout pop up
+  Then I should get a pop up
   And I should be on the login page

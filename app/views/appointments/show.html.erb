@@ -8,6 +8,57 @@
         </div>
           <div class="card-content">
             <ul id="details">
+
+              <%
+                # STATUSES
+              %>
+
+              <% if(@status.const == "EMAIL-NOT-YET-SENT") %>
+
+                <div class="alert alert-warning text-center" role="alert">
+                  <p>This appointment has not been verified with the provider.
+                  Once you are satisfied with your schedule, click "Verify" below. This will email the provider for this
+                  individual appointment, allowing them to follow up with you.</p>
+                </div>
+
+                <%= link_to 'Verify', email_verify_path(@careProvider.id), :class => 'btn btn-warning btn-block' %>
+
+              <% elsif(@status.const == "EMAIL-SENT-STATUS-PENDING") %>
+
+                <div class="alert alert-info text-center" role="alert">
+                  <p>This appointment is <i><strong>pending</strong></i> approval from your provider. They have been contacted and should respond shortly.</p>
+                </div>
+
+              <% elsif(@status.const == "PROVIDER-APPROVED") %>
+
+                <div class="alert alert-success text-center" role="alert">
+                  <p>This appointment has been <i><strong>approved</strong></i> by your provider.</p>
+                </div>
+
+              <% elsif(@status.const == "PROVIDER-DENIED") %>
+
+                <div class="alert alert-danger text-center" role="alert">
+                  <p>This appointment has been <i><strong>denied</strong></i> by your provider.</p>
+                </div>
+
+              <% end %>
+
+              <hr/>
+
+              <%
+                # COMMENTS
+              %>
+
+              <% if(@comments.count > 0) %>
+                <h4>Comments</h4>
+                  <ul>
+                  <% @comments.each do |comment| %>
+                    <li><strong><%= comment.poster_name %></strong>: <%= comment.comment %></li>
+                  <% end %>
+                  </ul>
+                <hr/>
+              <% end %>
+
               <li>
                 Care Provider:
                 <strong><%= @careProvider.office_name %></strong>
@@ -40,7 +91,7 @@
                 <%= link_to 'Edit', edit_appointment_path(@appointment), :class => 'btn btn-primary btn-block' %>
               </div>
               <div class="col-md-4">
-                <%= button_to 'Delete', appointment_path(@appointment), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-warning btn-block' %>
+                <%= button_to 'Delete', appointment_path(@appointment), :method => :delete, :class => 'btn btn-danger btn-block' %>
               </div>
             </div>
           </div>

@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require 'date'
+
 testDb = [{:title => 'The test works'}]
 
 testDb.each do |test|
@@ -133,9 +135,10 @@ CareProvider.create([{
 }])
 
 # create itinerary status
-ItineraryStatus.create([{const: 'PENDING'}])
-ItineraryStatus.create([{const: 'APPROVED'}])
-ItineraryStatus.create([{const: 'DENIED'}])
+ItineraryStatus.create([{const: 'EMAIL-NOT-YET-SENT'}])
+ItineraryStatus.create([{const: 'EMAIL-SENT-STATUS-PENDING'}])
+ItineraryStatus.create([{const: 'PROVIDER-APPROVED'}])
+ItineraryStatus.create([{const: 'PROVIDER-DENIED'}])
 
 # itineraries i & comments
 
@@ -143,14 +146,17 @@ cpDallas = CareProvider.find_by_id(1)
 cpHouston = CareProvider.find_by_id(2)
 cpParis = CareProvider.find_by_id(3)
 
-isPending = ItineraryStatus.find_by_const('PENDING')
-isApproved = ItineraryStatus.find_by_const('APPROVED') 
-isDenied = ItineraryStatus.find_by_const('DENIED')
+notSent = ItineraryStatus.find_by_const('EMAIL-NOT-YET-SENT')
+isPending = ItineraryStatus.find_by_const('EMAIL-SENT-STATUS-PENDING')
+isApproved = ItineraryStatus.find_by_const('PROVIDER-APPROVED')
+isDenied = ItineraryStatus.find_by_const('PROVIDER-DENIED')
+
+currMonth = Date.today.month
 
 User.all.each do |user|
   Itinerary.create([{
-        start:          	DateTime.new(2016,3,3,12,0,0), # 3/3 @ 12 (noon)
-        end:            	DateTime.new(2016,3,3,14,0,0), # 3/3 @ 2pm
+        start:          	DateTime.new(2016,currMonth,15,12,0,0), # 3/3 @ 12 (noon)
+        end:            	DateTime.new(2016,currMonth,15,14,0,0), # 3/3 @ 2pm
         description:    	'Getting blood work done',
         itinerary_status_id: 	isDenied.id,
         user_id: 		user.id,
@@ -172,8 +178,8 @@ User.all.each do |user|
 
 
   Itinerary.create([{
-        start:                  DateTime.new(2016,3,3,14,0,0), # 3/3 @ 2pm 
-        end:                    DateTime.new(2016,3,3,15,0,0), # 3/3 @ 4pm
+        start:                  DateTime.new(2016,currMonth,15,14,0,0), # 3/3 @ 2pm
+        end:                    DateTime.new(2016,currMonth,15,15,0,0), # 3/3 @ 4pm
         description:            'Meeting with doctor about my recovery',
         itinerary_status_id:    isApproved.id,
         user_id:                user.id,
@@ -195,8 +201,8 @@ User.all.each do |user|
 
 
   Itinerary.create([{
-        start:                  DateTime.new(2016,3,3,16,0,0), # 3/3 @ 4pm
-        end:                    DateTime.new(2016,3,3,18,0,0), # 3/3 @ 6pm
+        start:                  DateTime.new(2016,currMonth,16,16,0,0), # 3/3 @ 4pm
+        end:                    DateTime.new(2016,currMonth,16,18,0,0), # 3/3 @ 6pm
         description:            'Last treatment!',
         itinerary_status_id:    isPending.id,
         user_id:                user.id,
@@ -222,6 +228,14 @@ User.all.each do |user|
         itinerary_id:           Itinerary.maximum(:id),
   }])
 
+  Itinerary.create([{
+      start:                  DateTime.new(2016,currMonth,16,12,0,0), # 3/3 @ 4pm
+      end:                    DateTime.new(2016,currMonth,16,14,0,0), # 3/3 @ 6pm
+      description:            'Meeting with Dr. Shipley',
+      itinerary_status_id:    notSent.id,
+      user_id:                user.id,
+      care_provider_id:       cpParis.id
+  }])
 
 end
 
