@@ -1,16 +1,12 @@
 Then(/^I should be on the care providers page$/) do
   if page.respond_to? :should
     page.should have_content("All Care Providers")
-  else
-    assert page.has_content?("All Care Providers")
   end
 end
 
 Then(/^I should be on the new care providers page$/) do
   if page.respond_to? :should
     page.should have_content("New Care Provider")
-  else
-    assert page.has_content?("New Care Provider")
   end
 end
 
@@ -30,24 +26,18 @@ end
 Then(/^a new care provider with name "([^"]*)" is created$/) do |arg1|
   if page.respond_to? :should
     page.should have_content(arg1)
-  else
-    assert page.has_content?(arg1)
   end
 end
 
 Then(/^care provider is deleted$/) do
   if !(page.respond_to? :should)
     true
-  else
-    false
   end
 end
 
 Then(/^I should be on the edit care providers page$/) do
   if page.respond_to? :should
     page.should have_content("Update Care Provider")
-  else
-    assert page.has_content?("Update Care Provider")
   end
 end
 
