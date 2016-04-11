@@ -1,0 +1,8 @@
+<div class='col-md-8 col-md-offset-2 panel panel-default'>
+  <div class='panel-body'>
+    <h1>Daily Appointments</h1>
+      <%= calendar number_of_days: 1 do |date| %>
+        <%= date.day %>
+      <% end %>   
+  </div>
+</div>

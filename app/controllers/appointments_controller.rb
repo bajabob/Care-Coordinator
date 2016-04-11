@@ -18,14 +18,26 @@ class AppointmentsController < ApplicationController
                           date["end(5i)"].to_i)
   end
 
-  def view
+  def pdf
+    @cal = Itinerary.where(:user_id => 1)
+    p @cal.inspect
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :template => 'appointments/show.pdf.erb',
+        :layout => '_pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+  end
 
+  def view
     @cal_data = Array.new
 
     Itinerary.get_all_by_user_id( current_user.id ).each { |i|
       @cal_data.push i.to_bootstrap_calendar_hash
     }
-
     p @cal_data.inspect
   end
 

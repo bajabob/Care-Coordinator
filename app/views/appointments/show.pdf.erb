@@ -1,0 +1,13 @@
+<div class='col-md-8 col-md-offset-2 panel panel-default'>
+  <div class='panel-body'>
+    <h1>Daily Appointments</h1>
+       <tr>
+            <td>Title:</td>
+            <td>
+            <% @cal.each do |a| %>
+              <%= a.description %>
+            <% end %>
+            </td>
+          </tr>
+  </div>
+</div>
