@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :set_user_name_first
+  before_filter :set_user_name_first, :set_notification_count
 
   protected
 
@@ -19,6 +19,12 @@ class ApplicationController < ActionController::Base
     if(session[:user_id].present?)
       @user_name_first = current_user.name_first
     end
+  end
+
+  def set_notification_count
+    @notification_count = Notification.where(:read_status => false).count
+    print "PARAMS: "
+    print @notification_count.inspect
   end
 
   # HELPER: get the currently logged in user model obj

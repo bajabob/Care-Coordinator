@@ -93,3 +93,6 @@ body {
     color: #000;
     text-decoration: none;
 }
+.badge {
+    background-color: red;
+}
