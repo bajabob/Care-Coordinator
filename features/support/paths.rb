@@ -32,6 +32,9 @@ module NavigationHelpers
 
     when /^the edit care provider page$/
       '/providers/1/edit'
+
+    when /^the Notification page$/
+      '/notification'
       
     else
       begin

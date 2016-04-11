@@ -141,3 +141,16 @@ end
 Then(/^I should on the login page$/) do
   expect(find('.form-signin'))
 end
+
+# Notifcation Tests
+
+When(/^I press the notification icon$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should be on the Notification page$/) do
+  if page.respond_to? :should
+    page.should have_content("All Notifcations")
+  end
+end
+
