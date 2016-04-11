@@ -1,13 +1,11 @@
 class UserMailer < ApplicationMailer
-  default from: "bailey.bauman@tamu.edu"
-
 
   # invoke using...
   # UserMailer.request_verification(
   #     current_user,
   #     CareProvider.where(:id => 1).first,
   #     Itinerary.where(:id => 1).first).deliver_now
-  def request_verification( user, care_provider, itinerary )
+  def request_verification( user, care_provider, itinerary, link )
     headers "X-SMTPAPI" => {
       "sub": {
           "-clinicName-": [care_provider.office_name],
@@ -19,8 +17,8 @@ class UserMailer < ApplicationMailer
           ## todo, make link to google maps
           "-location-": [care_provider.address_line_one + " in " + care_provider.city],
 
-          ## todo, should be a link to production or locahost
-          "-link-": ['http://carecoordinator.heroku.com/'],
+          ## todo, should be a link to production or localhost
+          "-link-": [link],
       },
      "filters": {
        "templates": {

@@ -21,7 +21,7 @@
                   individual appointment, allowing them to follow up with you.</p>
                 </div>
 
-                <%= link_to 'Verify', email_verify_path(@careProvider.id), :class => 'btn btn-warning btn-block' %>
+                <%= link_to 'Verify', email_verify_path(:care_provider_id => @careProvider.id, :itinerary_id => @appointment.id), :class => 'btn btn-warning btn-block' %>
 
               <% elsif(@status.const == "EMAIL-SENT-STATUS-PENDING") %>
 

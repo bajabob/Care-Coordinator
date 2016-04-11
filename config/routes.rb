@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'appointments/view'
   get 'providers/all'
   get 'email/verify'
+  get 'email/providerresponse'
 
   # leave next line, used for various testing
   get 'test/index'
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
   resources :providers
   resources :appointments
   resources :accounts
+  resources :email
   root :to => redirect('/appointments/view')
   
   # Example resource route with options:
