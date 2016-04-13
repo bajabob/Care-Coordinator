@@ -145,12 +145,10 @@ end
 # Notifcation Tests
 
 When(/^I press the notification icon$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  find(:xpath, "//a[@href='/notification/']").click
 end
 
 Then(/^I should be on the Notification page$/) do
-  if page.respond_to? :should
-    page.should have_content("All Notifcations")
-  end
+  expect(find('.card-title') == "All Notifications")
 end
 
