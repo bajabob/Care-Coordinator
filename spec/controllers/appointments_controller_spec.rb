@@ -23,6 +23,10 @@ describe AppointmentsController do
       { :get => appointment_path(1) }.
         should route_to(:controller => "appointments", :action => "show", :id => "1")
     end
+    it "renders the pdf template" do
+      { :get => appointments_pdf_path }
+      expect(response).to have_http_status(:success)
+    end
   end
   describe "It edits and creates correctly" do
     it 'should edit an appointment' do
