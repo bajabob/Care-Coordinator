@@ -26,4 +26,4 @@ log
 # Ignore simplecov coverage file
 /coverage/*
 
-/config/sendgrid.rb
+/config/environment.rb
