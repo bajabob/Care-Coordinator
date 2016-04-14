@@ -54,6 +54,42 @@ class EmailController < ApplicationController
   # left intentionally blank
   end
 
+  def comment
+
+    itinerary_id = params[:itinerary_id]
+    comment = params[:comment]
+    user_id = params[:user_id]
+
+    @user = User.find(user_id)
+    @itinerary = Itinerary.find(itinerary_id)
+    @care_provider = CareProvider.find(@itinerary.care_provider_id)
+
+    random_string = SecureRandom.hex
+    link = email_providerresponse_url :key => random_string.to_s
+
+    # create record of email being sent
+    EmailLink.create(
+        :auth_token => random_string.to_s,
+        :to_email => @care_provider.office_email,
+        :to_name => @care_provider.office_name,
+        :user_id => @user.id,
+        :itinerary_id => @itinerary.id
+    )
+
+    UserMailer.comment_for_user(@user, @care_provider, link).deliver_now
+
+    Comment.create(
+        :poster_email => @care_provider.office_email,
+        :poster_name => @care_provider.office_name,
+        :comment => comment,
+        :itinerary_id => @itinerary.id
+    )
+
+    flash[:info] = "Your comment has been posted and " + @user.name_first + " has been notified"
+    redirect_to email_complete_path
+
+  end
+
   def approve
     # make sure we have a record of this transaction
     transaction = EmailLink.find_by_auth_token(params[:key])

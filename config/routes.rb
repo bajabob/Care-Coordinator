@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'appointments/weekly'
   get 'appointments/monthly'
   get 'appointments/view'
+  post 'appointments/comment'
   get 'providers/all'
   get 'email/verify'
   get 'email/providerresponse'
@@ -15,7 +16,8 @@ Rails.application.routes.draw do
   get 'email/complete'
   get 'email/deny'
   get 'email/approve'
-  
+  post 'email/comment'
+
   get 'appointments/pdf'
 
   # leave next line, used for various testing

@@ -1,5 +1,7 @@
 class AppointmentsController < ApplicationController
 
+  require 'securerandom'
+
   before_action :authenticate_user!
 
   def convertStart date
@@ -90,5 +92,38 @@ class AppointmentsController < ApplicationController
     @careProvider = CareProvider.find(@appointment.care_provider_id)
     @status = ItineraryStatus.find(@appointment.itinerary_status_id)
     @comments = Comment.where(:itinerary_id => @appointment.id)
+  end
+
+  def comment
+
+    itinerary_id = params[:itinerary_id]
+    comment = params[:comment]
+
+    @itinerary = Itinerary.find(itinerary_id)
+    @care_provider = CareProvider.find(@itinerary.care_provider_id)
+
+    random_string = SecureRandom.hex
+    link = email_providerresponse_url :key => random_string.to_s
+
+    # create record of email being sent
+    EmailLink.create(
+        :auth_token => random_string.to_s,
+        :to_email => @care_provider.office_email,
+        :to_name => @care_provider.office_name,
+        :user_id => current_user.id,
+        :itinerary_id => @itinerary.id
+    )
+
+    UserMailer.comment_for_provider(current_user, @care_provider, link).deliver_now
+
+    Comment.create(
+        :poster_email => current_user.email,
+        :poster_name => current_user.name_first,
+        :comment => comment,
+        :itinerary_id => @itinerary.id
+    )
+
+    flash[:info] = "Your comment has been posted and " + @care_provider.office_name + " has been notified"
+    redirect_to appointments_view_path
   end
 end

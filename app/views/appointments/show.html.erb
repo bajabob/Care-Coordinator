@@ -56,6 +56,19 @@
                     <li><strong><%= comment.poster_name %></strong>: <%= comment.comment %></li>
                   <% end %>
                   </ul>
+
+                  <%= form_tag appointments_comment_path, :method => :post, :class => 'form-signin', :url => appointments_comment_path do %>
+                      <h4 class="form-signin-heading text-muted">Post A New Comment</h4>
+
+                      <input name="comment" type="text" class="form-control" placeholder="Comment" required="" autofocus="">
+                      <input type="hidden" name="itinerary_id" value="<%= @appointment.id %>">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <button class="btn btn-sm btn-default btn-block" type="submit">Submit</button>
+                        </div>
+                      </div>
+                  <% end %>
+
                 <hr/>
               <% end %>
 
