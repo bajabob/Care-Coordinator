@@ -25,5 +25,3 @@ log
 
 # Ignore simplecov coverage file
 /coverage/*
-
-/config/environment.rb
