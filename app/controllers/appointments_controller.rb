@@ -19,7 +19,10 @@ class AppointmentsController < ApplicationController
   end
 
   def pdf
-    @cal = Itinerary.where(:user_id => 1)
+    @cal = Array.new
+    Itinerary.get_all_by_user_id( current_user.id ).each { |i|
+      @cal.push i
+    }
     p @cal.inspect
     respond_to do |format|
       format.html
