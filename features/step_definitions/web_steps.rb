@@ -149,6 +149,9 @@ When(/^I press the notification icon$/) do
 end
 
 Then(/^I should be on the Notification page$/) do
-  expect(find('.card-title') == "All Notifications")
+  expect(find('.card-title').text.should == "All Notifications")
 end
 
+Then(/^I should have no unread notifications$/) do
+  expect(find('.badge').text.should == "0")
+end
