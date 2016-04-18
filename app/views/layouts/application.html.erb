@@ -74,9 +74,6 @@
           <a href="/appointments/view">Calendar</a>
         </li>
         <li>
-          <%= link_to 'Appointments PDF', appointments_pdf_path(@Itinerary, format: 'pdf') %>
-        </li>
-        <li>
           <%= link_to 'Logout (' + @user_name_first + ')', '/accounts/logout', :id => 'Logout' %>
         </li>
         <li>
