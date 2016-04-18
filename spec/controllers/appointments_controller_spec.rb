@@ -51,7 +51,6 @@ describe AppointmentsController do
        @m=Itinerary.create :description => "Get Blood", :id => "1000", :care_provider_id => "1"
        delete :destroy, :id => 1000
     end
-
   end
   describe "convert date functions" do
     it 'should convert start date' do
@@ -65,6 +64,12 @@ describe AppointmentsController do
       newDate.should == "2016-03-02T08:30:00+00:00"
     end
   end
-
-  
+  describe 'comment function' do
+    it "should generate a comment" do
+        @c=Comment.create :poster_email => "test@gmail.com", :poster_name => "rock", :comment => "Eh.", :itinerary_id => "1"
+        @m=Itinerary.create :start => {"start(1i)" => 2016, "start(2i)" => 3, "start(3i)" => 2, "start(4i)" => 8, "start(5i)" => 30}, :description => "Get Blood", :id => "1000", :care_provider_id => "1"
+        post :comment, :itinerary_id => @m.id, :comment => @c 
+        flash[:info].should =~ /posted/i
+    end
+  end
 end
