@@ -25,5 +25,5 @@ Scenario: When information is inputted into fields, and they are saved, then app
   When appointment information is inputted
   And Update Appointment Info is clicked
   Then I should get a pop up
-  Then I should be on an appointment page
+  And I should be on an appointment page
   
