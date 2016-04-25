@@ -5,31 +5,50 @@
             <td>
             <% @cal.each do |a| %>
               <div class="card-content">
-                <td>Description:</td>
+                <% something = CareProvider.find(a.care_provider_id) %>
+                <td><b>Description:</b></td>
                 <%= a.description %>
                 <br>
-                <td>Appointment Time:</td>
+                <td><b>Appointment Time:</b></td>
                 <%= a.start.strftime("%k:%M %p | %B %d, %Y") %>
                 <td> --- </td>
                 <%= a.end.strftime("%k:%M %p | %B %d, %Y") %>
                 <br>
-                <td>Physician:</td>
-                <%= CareProvider.find(a.care_provider_id).physician_name %>
+                <td><b>Physician:</b></td>
+                <%= something.physician_name %>
                 <br>
-                <td>Care Provider:</td>
-                <%= CareProvider.find(a.care_provider_id).office_name %>
+                <td><b>Care Provider:</b></td>
+                <%= something.office_name %>
                 <br>
-                <td>Office Phone:</td>
-                <%= CareProvider.find(a.care_provider_id).office_phone %>
+                <td><b>Office Phone:</b></td>
+                <%= something.office_phone %>
                 <br>
-                <td>Office Address:</td>
-                <%= CareProvider.find(a.care_provider_id).address_line_one %>
-                <%= CareProvider.find(a.care_provider_id).address_line_two %> <td> | </td>
-                <%= CareProvider.find(a.care_provider_id).city %> <td>,</td> 
-                <%= CareProvider.find(a.care_provider_id).state %> <td>,</td> 
-                <%= CareProvider.find(a.care_provider_id).zip %>
+                <td><b>Office Address:</b></td>
+                <%= something.address_line_one %>
+                <%= something.address_line_two %> <td> | </td>
+                <%= something.city %> <td>,</td> 
+                <%= something.state %> <td>,</td> 
+                <%= something.zip %>
                 <br>
-                <td>Comments:</td>
+                <td><b>Appointment Status:</b></td>
+                <% if a.itinerary_status_id == 1 
+                         status = "Needs Verified"
+                         color = "blue"
+                  elsif a.itinerary_status_id == 2 
+                         status = "Pending"
+                         color = "#EAC117"
+                  elsif a.itinerary_status_id == 3 
+                         status = "Approved"
+                         color = "green"
+                  else 
+                         status = "Denied"
+                         color = "red"
+                  end %> 
+                 <span style="color: <%= color %>"> <%= status %></span>
+                  <!-- <font color="red">This is some text!</font> -->
+
+                <br>
+                <td><b>Comments:</b></td>
                 <br>
                 <% Comment.where(:itinerary_id => a.id).each do |c| %>
                     <li><%= c.poster_name %> <td>:</td> <%= c.comment %></li>
